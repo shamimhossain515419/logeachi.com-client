@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+   font-family: 'Josefin Sans', sans-serif;
+}
+
+.primaryBg {
+   background-color: #e600e6c0;
+}
+
+.primaryColor {
+   color: #e50ae9;
+   color: #e600e6c0;
+}
+
+.shadowbox {
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.bottonBox {
+   background: black;
+   color: #e50ae9;
+   padding: 10px 5px;
+   border-radius: 8px;
+
+}
+.bottonBox:hover{
+   background-color: #e50ae9;
+   color: white;
+}
