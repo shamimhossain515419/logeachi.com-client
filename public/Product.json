@@ -1,8 +1,7 @@
 [
 
      {
-          "_id": 1,
-          "name": "panjabi",
+               "name": "panjabi",
           "description": "Copper Ajrak cape with inner and palazzo pants by Sarah Karim",
           "quality": 2,
           "color": "blue",   
@@ -20,46 +19,25 @@
           "reading": 3
      },
      {
-          "_id": 2,
-          "name": "panjabi",
-          "description": "Men's Stylish Panjabi By Sara Lifestyle",
+               "name": "Sports & Sportz Design",
+          "description": "Bangladesh National Cricket Team Player Version Home Jersey World Cup-2022",
           "quality": 2,
-          "color": "blue",   
+          "color": "Red & Green",   
           "runningCategory":"featured",
           "size": "large",
           "category": "panjabi",
           "brand": "new brand",
-          "price": 420,
+          "price": 491,
           "discount": 10,
-          "image1": "https://static.aadi.com.bd/__sized__/products/1161-201778-panjabi-printed-sara-lifestyle-ltd-726703-1-thumbnail-500x500-70.jpg",
-          "image2": "https://static.aadi.com.bd/__sized__/products/1161-201778-panjabi-printed-sara-lifestyle-ltd-726703-1-thumbnail-500x500-70.jpg",
-          "image3": "https://static.aadi.com.bd/__sized__/products/1161-201778-panjabi-printed-sara-lifestyle-ltd-726703-1-thumbnail-500x500-70.jpg",
+          "image1": "https://static.aadi.com.bd/__sized__/products/182036/1182-182036-t-shirt-red-green-sports-sportz-design-667993-2-crop-c0-5__0-5-400x500-70.jpg",
+          "image2": "https://static.aadi.com.bd/__sized__/products/182036/1182-182036-t-shirt-red-green-sports-sportz-design-667993-2-crop-c0-5__0-5-400x500-70.jpg",
+          "image3": "https://static.aadi.com.bd/__sized__/products/182036/1182-182036-t-shirt-red-green-sports-sportz-design-667993-2-crop-c0-5__0-5-400x500-70.jpg",
           "Occasion": "Eid collection",
           "Sleeve": "Sleeve Type:",
           "reading": 3
      },
      {
-          "_id": 3,
-          "name": "panjabi",
-          "description": "Men's Stylish Panjabi By Sara Lifestyle",
-          "quality": 2,
-          "color": "blue",   
-          "runningCategory":"featured",
-          "size": "large",
-          "brand": "new brand",
-          "price": 420,
-          "category": "panjabi",
-          "discount": 10,
-          "image1": "https://static.aadi.com.bd/__sized__/products/1161-201778-panjabi-printed-sara-lifestyle-ltd-726703-1-thumbnail-500x500-70.jpg",
-          "image2": "https://static.aadi.com.bd/__sized__/products/1161-201778-panjabi-printed-sara-lifestyle-ltd-726703-1-thumbnail-500x500-70.jpg",
-          "image3": "https://static.aadi.com.bd/__sized__/products/1161-201778-panjabi-printed-sara-lifestyle-ltd-726703-1-thumbnail-500x500-70.jpg",
-          "Occasion": "Eid collection",
-          "Sleeve": "Sleeve Type:",
-          "reading": 3
-     },
-     {
-          "_id": 4,
-          "name": "panjabi",
+               "name": "panjabi",
           "description": "Men's Stylish Panjabi By Sara Lifestyle",
           "quality": 2,
           "color": "blue",   
@@ -77,8 +55,7 @@
           "reading": 3
      },
      {
-          "_id": 5,
-          "name": "panjabi",
+               "name": "panjabi",
           "description": "Men's Stylish Panjabi By Sara Lifestyle",
           "quality": 2,
           "color": "blue",   
@@ -96,27 +73,7 @@
           "reading": 3
      },
      {
-          "_id": 6,
-          "name": "panjabi",
-          "description": "Men's Stylish Panjabi By Sara Lifestyle",
-          "quality": 2,
-          "color": "blue",   
-          "runningCategory":"featured",
-          "category": "panjabi",
-          "size": "large",
-          "brand": "new brand",
-          "price": 420,
-          "discount": 10,
-          "image1": "https://static.aadi.com.bd/__sized__/products/1161-201778-panjabi-printed-sara-lifestyle-ltd-726703-1-thumbnail-500x500-70.jpg",
-          "image2": "https://static.aadi.com.bd/__sized__/products/1161-201778-panjabi-printed-sara-lifestyle-ltd-726703-1-thumbnail-500x500-70.jpg",
-          "image3": "https://static.aadi.com.bd/__sized__/products/1161-201778-panjabi-printed-sara-lifestyle-ltd-726703-1-thumbnail-500x500-70.jpg",
-          "Occasion": "Eid collection",
-          "Sleeve": "Sleeve Type:",
-          "reading": 3
-     },
-     {
-          "_id": 7,
-          "name": "panjabi",
+               "name": "panjabi",
           "description": "Men's Stylish Panjabi By Sara Lifestyle",
           "quality": 2,
           "color": "blue",   
@@ -134,8 +91,25 @@
           "reading": 3
      },
      {
-          "_id": 8,
-          "name": "panjabi",
+               "name": "panjabi",
+          "description": "Men's Stylish Panjabi By Sara Lifestyle",
+          "quality": 2,
+          "color": "blue",   
+          "runningCategory":"featured",
+          "category": "panjabi",
+          "size": "large",
+          "brand": "new brand",
+          "price": 420,
+          "discount": 10,
+          "image1": "https://static.aadi.com.bd/__sized__/products/1161-201778-panjabi-printed-sara-lifestyle-ltd-726703-1-thumbnail-500x500-70.jpg",
+          "image2": "https://static.aadi.com.bd/__sized__/products/1161-201778-panjabi-printed-sara-lifestyle-ltd-726703-1-thumbnail-500x500-70.jpg",
+          "image3": "https://static.aadi.com.bd/__sized__/products/1161-201778-panjabi-printed-sara-lifestyle-ltd-726703-1-thumbnail-500x500-70.jpg",
+          "Occasion": "Eid collection",
+          "Sleeve": "Sleeve Type:",
+          "reading": 3
+     },
+     {
+               "name": "panjabi",
           "description": "Men's Stylish Panjabi By Sara Lifestyle",
           "quality": 2,
           "color": "blue",   
@@ -153,8 +127,25 @@
           "reading": 3
      },
      {
-          "_id": 9,
-          "name": "panjabi",
+               "name": "panjabi",
+          "description": "Men's Stylish Panjabi By Sara Lifestyle",
+          "quality": 2,
+          "color": "blue",   
+          "runningCategory":"featured",
+          "size": "large",
+          "brand": "new brand",
+          "price": 420,
+          "category": "panjabi",
+          "discount": 10,
+          "image1": "https://static.aadi.com.bd/__sized__/products/1161-201778-panjabi-printed-sara-lifestyle-ltd-726703-1-thumbnail-500x500-70.jpg",
+          "image2": "https://static.aadi.com.bd/__sized__/products/1161-201778-panjabi-printed-sara-lifestyle-ltd-726703-1-thumbnail-500x500-70.jpg",
+          "image3": "https://static.aadi.com.bd/__sized__/products/1161-201778-panjabi-printed-sara-lifestyle-ltd-726703-1-thumbnail-500x500-70.jpg",
+          "Occasion": "Eid collection",
+          "Sleeve": "Sleeve Type:",
+          "reading": 3
+     },
+     {
+               "name": "panjabi",
           "description": "Men's Stylish Panjabi By Sara Lifestyle",
           "quality": 2,
           "color": "blue",   
@@ -172,7 +163,7 @@
           "reading": 3
      },
      {
-          "_id": 10,
+     
           "name": "panjabi",
           "description": "Men's Stylish Panjabi By Sara Lifestyle",
           "quality": 2,
@@ -191,7 +182,7 @@
           "reading": 3
      },
      {
-          "_id": 11,
+     
           "name": "Sarah",
           "description": "Copper Ajrak cape with inner and palazzo pants by Sarah Karim",
           "quality": 2,
@@ -210,7 +201,7 @@
           "reading": 3
      },
      {
-          "_id": 12,
+     
           "name": "Sarah",
           "description": "Copper Ajrak cape with inner and palazzo pants by Sarah Karim",
           "quality": 2,
@@ -229,7 +220,7 @@
           "reading": 3
      },
      {
-          "_id": 13,
+     
           "name": "Sarah",
           "description": "Copper Ajrak cape with inner and palazzo pants by Sarah Karim",
           "quality": 2,
@@ -248,7 +239,7 @@
           "reading": 3
      },
      {
-          "_id": 14,
+     
           "name": "Sarah",
           "description": "Copper Ajrak cape with inner and palazzo pants by Sarah Karim",
           "quality": 2,
@@ -267,7 +258,7 @@
           "reading": 3
      },
      {
-          "_id": 15,
+     
           "name": "Sarah",
           "description": "Copper Ajrak cape with inner and palazzo pants by Sarah Karim",
           "quality": 2,
@@ -286,7 +277,7 @@
           "reading": 3
      },
      {
-          "_id": 16,
+     
           "name": "Sarah",
           "description": "Copper Ajrak cape with inner and palazzo pants by Sarah Karim",
           "quality": 2,
@@ -305,7 +296,7 @@
           "reading": 3
      },
      {
-          "_id": 17,
+     
           "name": "Sarah",
           "description": "Copper Ajrak cape with inner and palazzo pants by Sarah Karim",
           "quality": 2,
@@ -324,7 +315,7 @@
           "reading": 3
      },
      {
-          "_id": 18,
+     
           "name": "Sarah",
           "description": "Copper Ajrak cape with inner and palazzo pants by Sarah Karim",
           "quality": 2,
@@ -343,8 +334,7 @@
           "reading": 3
      },
      {
-          "_id":19,
-          "name": "Sarah",
+               "name": "Sarah",
           "description": "Copper Ajrak cape with inner and palazzo pants by Sarah Karim",
           "quality": 2,
           "color": "blue",   
@@ -362,7 +352,7 @@
           "reading": 3
      },
      {
-          "_id": 20,
+     
           "name": "Sarah",
           "description": "Copper Ajrak cape with inner and palazzo pants by Sarah Karim",
           "quality": 2,

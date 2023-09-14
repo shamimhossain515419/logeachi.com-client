@@ -2,10 +2,21 @@ import { Link } from "react-router-dom";
 import { AiOutlineHeart, AiOutlineSearch, AiOutlineUserAdd } from 'react-icons/ai'
 import { PiShoppingCartBold } from 'react-icons/pi'
 import { FaBars } from 'react-icons/fa'
-import { useState } from "react";
+import { useContext, useState } from "react";
 import NavbarModal from "./NavbarModal";
+import { AuthContext } from "../../Rotues/Authprovider/Authprovider";
+
 const Navbar = () => {
-     const [isOpen, setIsOpen] = useState(false)
+     const [isOpen, setIsOpen] = useState(false);
+
+     const { LogOut, user } = useContext(AuthContext)
+     const handleLogout = () => {
+          LogOut().then(result => {
+               if(result){
+                   alert(" সফলভাবে  লগউত হয়েছে ")  
+               }
+             })
+     }
 
      return (
           <div className="  shadow-md   py-1 px-1 md:px-6">
@@ -27,10 +38,13 @@ const Navbar = () => {
                               </div>
                               <div>
                                    <div className=" flex items-center gap-3 md:gap-10">
+                                        <div className="  cur" onClick={handleLogout}> {user ? "Logout" : ""} </div>
                                         <div>
                                              <AiOutlineSearch className=" text-[18px] md:text-[24px]" ></AiOutlineSearch>
                                         </div>
-                                        <AiOutlineUserAdd className=" text-[18px] md:text-[24px]" ></AiOutlineUserAdd>
+                                        <Link to={'/account/login'}>
+                                             <AiOutlineUserAdd className=" text-[18px] md:text-[24px]" ></AiOutlineUserAdd>
+                                        </Link>
                                         <AiOutlineHeart className=" text-[18px] md:text-[24px]" ></AiOutlineHeart>
                                         <PiShoppingCartBold className=" text-[18px] md:text-[24px]"  ></PiShoppingCartBold>
                                    </div>
@@ -41,7 +55,7 @@ const Navbar = () => {
 
                <div>
                     {
-                      isOpen ? <NavbarModal setIsOpen={setIsOpen} ></NavbarModal> : null
+                         isOpen ? <NavbarModal setIsOpen={setIsOpen} ></NavbarModal> : null
                     }
                </div>
           </div>

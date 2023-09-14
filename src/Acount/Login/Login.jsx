@@ -1,10 +1,11 @@
-import { Link, } from "react-router-dom";
+import { Link, useNavigate, } from "react-router-dom";
 
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Rotues/Authprovider/Authprovider";
 import Container from "../../Component/Container";
 import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
+import toast from "react-hot-toast";
 
 
 
@@ -12,7 +13,7 @@ const Login = () => {
      const [confrimPass, setConfrimPass] = useState(true)
      const [Open, setOpen] = useState(false)
      const { Login, GoogleLogin } = useContext(AuthContext);
-
+     const navigate = useNavigate();
      const handleSubmit = (e) => {
           e.preventDefault();
           const from = e.target;
@@ -21,8 +22,8 @@ const Login = () => {
           setConfrimPass(true);
           Login(email, password).then(result => {
                if (result) {
-
-                    alert("সফলভাবে লগইন হয়েছে!")
+                    navigate('/')
+                    toast.success('সফলভাবে নিবন্ধন হয়েছে!')
                     from.reset();
                }
 
@@ -35,11 +36,12 @@ const Login = () => {
      const hendleGoogle = () => {
           GoogleLogin().then(result => {
                if (result) {
-                    alert("সফলভাবে লগইন হয়েছে!")
+                    navigate('/')
+                    toast.success('সফলভাবে নিবন্ধন হয়েছে!')
                }
 
           }).then(error => {
-               console.log(error.massage);
+               console.log(error?.massage);
           })
      }
 
@@ -96,7 +98,7 @@ const Login = () => {
                                              <div onClick={hendleGoogle} className="w-full bg-black py-[5px] cursor-pointer  rounded-md  flex justify-center items-center gap-2">
                                                   <FcGoogle size={40}></FcGoogle>
                                              </div>
-                                             <div  className=" w-full bg-[#365bef] text-white py-[5px]   cursor-pointer rounded-md flex justify-center items-center gap-2">
+                                             <div className=" w-full bg-[#365bef] text-white py-[5px]   cursor-pointer rounded-md flex justify-center items-center gap-2">
                                                   <BsFacebook size={40}></BsFacebook>
                                              </div>
 

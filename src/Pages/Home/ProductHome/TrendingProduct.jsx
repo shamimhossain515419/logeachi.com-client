@@ -12,7 +12,7 @@ const TrendingProduct = () => {
 
      const [limit, setSetLimit] = useState(6)
      useEffect(() => {
-          fetch('/public/Product.json').then(res => res.json()).then(data => setProduct(data))
+          fetch('http://localhost:5000/product').then(res => res.json()).then(data => setProduct(data))
      }, []);
  
      const Trending =product?.filter(item=> item?.runningCategory === "Trending");

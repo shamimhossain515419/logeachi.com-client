@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Container from "../../Component/Container";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Rotues/Authprovider/Authprovider";
+import toast, { Toaster } from "react-hot-toast";
 const Register = () => {
      const [confrimPass, setConfrimPass] = useState(true)
      const [Open, setOpen] = useState(false)
@@ -21,7 +22,8 @@ const Register = () => {
                     if (result) {
                          updateUserProfile(name);
                          navigate('/')
-                         alert("সফলভাবে নিবন্ধন হয়েছে!")
+                         toast.success('সফলভাবে নিবন্ধন হয়েছে!')
+                         
                     }
 
                }).then(error => {
@@ -94,7 +96,10 @@ const Register = () => {
                          </div>
                     </Container>
                </div>
-
+               <Toaster
+                    position="top-center"
+                    reverseOrder={false}
+               />
           </div>
      );
 };

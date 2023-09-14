@@ -9,9 +9,9 @@ const FeaturedProduct = () => {
 
      const [limit, setSetLimit] = useState(6)
      useEffect(() => {
-          fetch('/public/Product.json').then(res => res.json()).then(data => setProduct(data))
+          fetch('http://localhost:5000/product').then(res => res.json()).then(data => setProduct(data))
      }, []);
-     console.log(product);
+
 
 
      return (

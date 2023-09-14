@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../Share/Navbar/Navbar";
 import Footer from "../Share/Footer/Footer";
+import { Toaster } from "react-hot-toast";
 
 
 
@@ -16,8 +17,11 @@ const Main = () => {
 
                <Footer></Footer>
 
-              
 
+               <Toaster
+                    position="top-center"
+                    reverseOrder={false}
+               />
 
 
           </div>

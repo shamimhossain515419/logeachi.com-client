@@ -12,8 +12,11 @@ import {
      signOut,
      updateProfile,
 } from 'firebase/auth'
-// import axios from "axios";
 import app from "../../FirebaseConfig/FirebaseConfig";
+import axios from "axios";
+
+// import axios from "axios";
+
 export const AuthContext = createContext(null);
 const auth = getAuth(app)
 
@@ -64,19 +67,17 @@ const AuthProvider = ({ children }) => {
           const unsubcript = onAuthStateChanged(auth, currentUser => {
                setUser(currentUser);
                setLoading(false);
-               // console.log(currentUser?.email);
-               // if (currentUser?.email) {
+               if (currentUser?.email) {
+                    axios.post('http://localhost:5000/jwt')
+                         .then(data => {
+                              localStorage.setItem('access-token', data?.data?.token)
+                         }).catch(error => {
+                              localStorage.removeItem('access-token')
+                         })
 
-               //      axios.post('https://banglabook-server.vercel.app/jwt')
-               //           .then(data => {
-               //                localStorage.setItem('access-token', data?.data?.token)
-               //           }).catch(error => {
-               //                localStorage.removeItem('access-token')
-               //           })
-
-               // } else {
-               //      localStorage.removeItem('access-token')
-               // }
+               } else {
+                    localStorage.removeItem('access-token')
+               }
           })
           return () => {
                unsubcript()
