@@ -7,12 +7,11 @@ import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import toast from "react-hot-toast";
 
-
-
 const Login = () => {
      const [confrimPass, setConfrimPass] = useState(true)
      const [Open, setOpen] = useState(false)
      const { Login, GoogleLogin } = useContext(AuthContext);
+
      const navigate = useNavigate();
      const handleSubmit = (e) => {
           e.preventDefault();
@@ -38,6 +37,7 @@ const Login = () => {
                if (result) {
                     navigate('/')
                     toast.success('সফলভাবে নিবন্ধন হয়েছে!')
+               
                }
 
           }).then(error => {

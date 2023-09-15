@@ -8,7 +8,7 @@ const ProductHome = () => {
     
 
      useEffect(()=>{
-          fetch('/public/Category.json').then(res=>res.json()).then(data=> setCategory(data))
+          fetch('http://localhost:5000/category').then(res=>res.json()).then(data=> setCategory(data))
      },[1000]);
 
      return (
@@ -18,7 +18,7 @@ const ProductHome = () => {
 
                     <div className=" my-10">
                          <div className=" grid md:grid-cols-5 gap-7 ">
-                          { category && category.map(item=> <CategoryCard key={item.id} card={item}></CategoryCard>)};
+                          { category && category.map(item=> <CategoryCard key={item._id} card={item}></CategoryCard>)};
                          </div>
                     </div>
                </Container>

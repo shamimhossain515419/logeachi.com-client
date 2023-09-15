@@ -17,7 +17,7 @@ const ProductCard = ({ card }) => {
 
      const handlewishList = async () => {
         
-          axiosSecure.post('http://localhost:5000/product/wishlist', { wishList }).then(result => {
+          axiosSecure.post('https://logeachi-com-server-hn3xlq1pi-shamimusman515419.vercel.app/product/wishlist', { wishList }).then(result => {
                console.log(result);
                if (result) {
                     toast.success('সফলভাবে   ইচ্ছা পূরণ  হয়েছে!')
@@ -33,7 +33,7 @@ const ProductCard = ({ card }) => {
                <div>
 
                     <Link  to={`/product/${_id}`} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)} className=" h-[240px] w-full  " >
-                         <img className=' w-full h-full object-contain' src={Open ? image2 : image1} alt="" />
+                         <img className=' w-full h-[250px] object-contain' src={Open ? image2 : image1} alt="" />
                     </Link>
 
                     <div>

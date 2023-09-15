@@ -9,7 +9,7 @@ const FeaturedProduct = () => {
 
      const [limit, setSetLimit] = useState(6)
      useEffect(() => {
-          fetch('http://localhost:5000/product').then(res => res.json()).then(data => setProduct(data))
+          fetch('https://logeachi-com-server-hn3xlq1pi-shamimusman515419.vercel.app/product').then(res => res.json()).then(data => setProduct(data))
      }, []);
 
 

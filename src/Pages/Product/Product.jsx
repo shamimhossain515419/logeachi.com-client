@@ -25,7 +25,7 @@ const [axiosSecure]=useAxiosSecure();
      const [Image, setImage] = useState("")
      useEffect(() => {
           const SingleDataCount = async () => {
-               const res = await fetch(`http://localhost:5000/product/${params.id}`);
+               const res = await fetch(`https://logeachi-com-server-hn3xlq1pi-shamimusman515419.vercel.app/product/${params.id}`);
                const data = await res.json();
                setSingleData(data)
                setImage(data?.image1)
@@ -51,7 +51,7 @@ const [axiosSecure]=useAxiosSecure();
 
 
      const handleAddCard = () => {
-          axiosSecure.post('http://localhost:5000/product/addcard', { addcard }).then(result => {
+          axiosSecure.post('https://logeachi-com-server-hn3xlq1pi-shamimusman515419.vercel.app/product/addcard', { addcard }).then(result => {
                console.log(result);
                if (result) {
                     toast.success('সফলভাবে   কার্ড যুক্ হয়েছে')

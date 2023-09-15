@@ -3,13 +3,14 @@ import Container from "../../Component/Container";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Rotues/Authprovider/Authprovider";
 import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
 const Register = () => {
-     const [confrimPass, setConfrimPass] = useState(true)
+    const [confrimPass, setConfrimPass] = useState(true)
      const [Open, setOpen] = useState(false)
      const { createUser, updateUserProfile } = useContext(AuthContext);
      const navigate = useNavigate();
-     const handleSubmit = (e) => {
 
+     const handleSubmit = async (e) => {
           e.preventDefault();
           const from = e.target;
           const name = from.name.value;
@@ -21,9 +22,14 @@ const Register = () => {
                createUser(email, password).then(result => {
                     if (result) {
                          updateUserProfile(name);
-                         navigate('/')
-                         toast.success('সফলভাবে নিবন্ধন হয়েছে!')
-                         
+                         const User = { name, password, email, status: 'user' };
+                         axios.post('http://localhost:5000/users', User).then(result => {
+                              if (result) {
+                                   navigate('/')
+                                   toast.success('সফলভাবে নিবন্ধন হয়েছে!')
+                              }
+
+                         })
                     }
 
                }).then(error => {
