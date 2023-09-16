@@ -11,7 +11,7 @@ const Main = () => {
           <div>
                <Navbar></Navbar>
 
-               <div className=" min-h-[80vh]">
+               <div className=" mt-20 min-h-[80vh]">
                     <Outlet></Outlet>
                </div>
 

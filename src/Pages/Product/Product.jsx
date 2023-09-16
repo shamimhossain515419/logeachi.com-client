@@ -12,10 +12,10 @@ import { BiChevronDown } from "react-icons/bi";
 import { AuthContext } from "../../Rotues/Authprovider/Authprovider";
 import useAxiosSecure from "../../Component/AxioxSecour/AxiosSecure";
 import toast from "react-hot-toast";
-
+import GetCardData from "../../api/GetCardData";
 const Product = () => {
-const {user}=useContext(AuthContext);
-const [axiosSecure]=useAxiosSecure();
+     const { user } = useContext(AuthContext);
+     const [axiosSecure] = useAxiosSecure();
      const params = useParams();
      const [IsSize, setIsSize] = useState("");
      const [Quantity, setQuantity] = useState(1);
@@ -36,8 +36,9 @@ const [axiosSecure]=useAxiosSecure();
      const { image1, name, description, color, price, image2, image3, reading,
           Sleeve, Occasion, discount, category, brand, size, runningCategory,
           quality } = singleData;
-   
-     const [data, refetch, isLoading] = GetCategory(category)
+
+     const [ data,] = GetCategory(category);
+
 
      const handleDecriment = () => {
           setQuantity(Quantity + 1)
@@ -47,13 +48,16 @@ const [axiosSecure]=useAxiosSecure();
           setQuantity(Quantity - 1)
      }
 
-     const addcard = { image1, description, color,email:user?.email, name, price, size: IsSize, Quantity, discount, brand, category }
+     const addcard = { image1, description, color, email: user?.email, name, price, size: IsSize, Quantity, discount, brand, category }
 
+   
 
      const handleAddCard = () => {
-          axiosSecure.post('https://logeachi-com-server-hn3xlq1pi-shamimusman515419.vercel.app/product/addcard', { addcard }).then(result => {
+          axiosSecure.post('/product/addcard', { addcard }).then(result => {
                console.log(result);
                if (result) {
+                    const [, isLoading, refetch] = GetCardData();
+                    refetch();
                     toast.success('সফলভাবে   কার্ড যুক্ হয়েছে')
                }
           }).catch(error => {

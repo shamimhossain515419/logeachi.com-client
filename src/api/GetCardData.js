@@ -3,21 +3,27 @@ import useAxiosSecure from "../Component/AxioxSecour/AxiosSecure";
 import { useContext } from "react";
 import { AuthContext } from "../Rotues/Authprovider/Authprovider";
 
-
-
-const GetUserApi = () => {
+const GetCardData = () => {
      const [axiosSecure] = useAxiosSecure();
      const { user } = useContext(AuthContext)
-     const { data:CurrentUser, isLoading } = useQuery({
-          queryKey: ['users', user?.email],
+     const { data: addcard, isLoading, refetch } = useQuery({
+          queryKey: ['addcard', user?.email],
           queryFn: async () => {
-               const res = await axiosSecure.get(`/users?email=${user?.email}`);
+               const res = await axiosSecure.get(`/product/addcard/${user?.email}`);
                return res.data;
           },
-     })
-     return [CurrentUser, isLoading];
+     });
+
+
+    
+          return [addcard, isLoading, refetch]
+     
+
+
+
+
 
 
 };
 
-export default GetUserApi;
+export default GetCardData;

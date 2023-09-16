@@ -1,38 +1,41 @@
 
 import { useContext, useState } from 'react';
 import { AiFillHeart } from 'react-icons/ai'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAxiosSecure from '../AxioxSecour/AxiosSecure';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../Rotues/Authprovider/Authprovider';
-import axios from 'axios';
-
 
 const ProductCard = ({ card }) => {
      const [Open, setOpen] = useState(false);
      const { name, description, price, _id, image1, image2, } = card;
      const { user } = useContext(AuthContext)
      const [axiosSecure] = useAxiosSecure();
-     const wishList = { email: user?.email, name: user?.displayName, ...card };
+     const wishList = { email: user?.email, name: user?.displayName, description, image1, id: _id };
 
-     const handlewishList = async () => {
-        
-          axiosSecure.post('https://logeachi-com-server-hn3xlq1pi-shamimusman515419.vercel.app/product/wishlist', { wishList }).then(result => {
-               console.log(result);
-               if (result) {
-                    toast.success('সফলভাবে   ইচ্ছা পূরণ  হয়েছে!')
-               }
-          }).catch(error => {
-               console.log(error);
-          })
-}
+     const Navigate = useNavigate();
+     const handlewishList = () => {
+          if (user) {
+               axiosSecure.post('/product/wishlist', { wishList }).then(result => {
+                    if (result) {
+                         // refetch();
+                         toast.success('সফলভাবে   ইচ্ছা পূরণ  হয়েছে!')
+                    }
+               }).catch(error => {
+                    console.log(error);
+               })
+          } else {
+               Navigate('/account/login')
+          }
+
+     }
 
      return (
           <div className=' shadowbox rounded p-2 cursor-pointer  '>
 
                <div>
 
-                    <Link  to={`/product/${_id}`} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)} className=" h-[240px] w-full  " >
+                    <Link to={`/product/${_id}`} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)} className=" h-[240px] w-full  " >
                          <img className=' w-full h-[250px] object-contain' src={Open ? image2 : image1} alt="" />
                     </Link>
 
