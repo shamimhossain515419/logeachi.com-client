@@ -13,17 +13,8 @@ const GetCardData = () => {
                return res.data;
           },
      });
-
-
-    
-          return [addcard, isLoading, refetch]
+  return [addcard, isLoading, refetch]
      
-
-
-
-
-
-
 };
 
 export default GetCardData;

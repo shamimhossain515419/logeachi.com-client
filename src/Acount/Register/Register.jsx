@@ -23,7 +23,7 @@ const Register = () => {
                     if (result) {
                          updateUserProfile(name);
                          const User = { name, password, email, status: 'user' };
-                         axios.post('http://localhost:5000/users', User).then(result => {
+                         axios.post('https://logeachi-com-server-hhdi842lb-shamimusman515419.vercel.app/users', User).then(result => {
                               if (result) {
                                    navigate('/')
                                    toast.success('সফলভাবে নিবন্ধন হয়েছে!')

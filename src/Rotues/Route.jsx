@@ -15,6 +15,8 @@ import WishList from "../Dashboard/WishList/WishList";
 import Loading from "../Component/Loading/Loading";
 import PrivateRoute from "../Component/PrivateRoute/PrivateRoute";
 import AdminDashboard from "../AdminDashboard/AdminDashbard";
+import PaymentCard from "../Pages/PaymentCard/PaymentCard";
+import CategoryProduct from "../Pages/CategoryProduct/CategoryProduct";
 
 
 const Route = createBrowserRouter([
@@ -31,6 +33,10 @@ const Route = createBrowserRouter([
                     element: <Register></Register>
                },
                {
+                    path: '/product/category',
+                    element: <CategoryProduct></CategoryProduct>
+               },
+               {
                     path: '/account/login',
                     element: <Login></Login>
                },
@@ -44,8 +50,12 @@ const Route = createBrowserRouter([
                     loader: ({ params }) => fetch(`https://logeachi-com-server-hn3xlq1pi-shamimusman515419.vercel.app/product/${params.id}`)
                },
                {
+                    path: '/dashboard/paymentcard/:id',
+                    element: <PrivateRoute> <PaymentCard></PaymentCard></PrivateRoute>
+               },
+               {
                     path: '/dashboard',
-                    element:  <PrivateRoute> <Dashboard></Dashboard></PrivateRoute> ,
+                    element: <PrivateRoute> <Dashboard></Dashboard></PrivateRoute>,
                     children: [
                          {
                               path: '/dashboard',
@@ -78,7 +88,8 @@ const Route = createBrowserRouter([
                          {
                               path: '/dashboard/wishlist',
                               element: <WishList></WishList>
-                         }
+                         },
+
                     ]
                }
           ]

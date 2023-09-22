@@ -71,16 +71,16 @@ const AuthProvider = ({ children }) => {
 
 
                if (currentUser?.email) {
-                    axios.post('http://localhost:5000/jwt')
+                    axios.post('https://logeachi-com-server-hhdi842lb-shamimusman515419.vercel.app/jwt')
                          .then(data => {
                               setUser(currentUser);
                               setLoading(false);
                               localStorage.setItem('access-token', data?.data?.token);
 
-                              axios.get(`http://localhost:5000/users?email=${currentUser?.email}`).then(result => {
+                              axios.get(`https://logeachi-com-server-hhdi842lb-shamimusman515419.vercel.app/users?email=${currentUser?.email}`).then(result => {
                                    if (!result?.data) {
                                         const UserData = { name: currentUser?.displayName, email: currentUser?.email, status: "user" }
-                                        axios.post('http://localhost:5000/users', UserData).then(result => {
+                                        axios.post('https://logeachi-com-server-hhdi842lb-shamimusman515419.vercel.app/users', UserData).then(result => {
                                              console.log(result?.data?.email);
                                         })
                                    }
@@ -99,7 +99,7 @@ const AuthProvider = ({ children }) => {
 
 
                // if (!CurrentUser) {
-               //      axios.post('http://localhost:5000/users', Userdata).then(result => {
+               //      axios.post('https://logeachi-com-server-hhdi842lb-shamimusman515419.vercel.app/users', Userdata).then(result => {
                //           if (result) {
                //                navigate('/')
                //                toast.success('সফলভাবে নিবন্ধন হয়েছে!')

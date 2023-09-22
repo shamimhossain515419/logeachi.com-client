@@ -10,6 +10,7 @@ const NavbarDown = () => {
      const handleLog =()=>{
           LogOut().then(result=>{
                 if(result){
+                    
                     toast.success("Successfully Logout")
                 }
           }).catch(error=>{

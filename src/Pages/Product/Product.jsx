@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 import { AiFillHeart, AiFillInstagram, AiOutlineCheckSquare, AiOutlineClose } from "react-icons/ai";
 import { CgMathPlus, CgMathMinus } from "react-icons/cg";
@@ -12,7 +12,6 @@ import { BiChevronDown } from "react-icons/bi";
 import { AuthContext } from "../../Rotues/Authprovider/Authprovider";
 import useAxiosSecure from "../../Component/AxioxSecour/AxiosSecure";
 import toast from "react-hot-toast";
-import GetCardData from "../../api/GetCardData";
 const Product = () => {
      const { user } = useContext(AuthContext);
      const [axiosSecure] = useAxiosSecure();
@@ -23,6 +22,7 @@ const Product = () => {
      const [IsModal, setIsModal] = useState(false);
      const [singleData, setSingleData] = useState([])
      const [Image, setImage] = useState("")
+     const Navigate = useNavigate();
      useEffect(() => {
           const SingleDataCount = async () => {
                const res = await fetch(`https://logeachi-com-server-hn3xlq1pi-shamimusman515419.vercel.app/product/${params.id}`);
@@ -37,7 +37,7 @@ const Product = () => {
           Sleeve, Occasion, discount, category, brand, size, runningCategory,
           quality } = singleData;
 
-     const [ data,] = GetCategory(category);
+     const [data,] = GetCategory(category);
 
 
      const handleDecriment = () => {
@@ -50,14 +50,14 @@ const Product = () => {
 
      const addcard = { image1, description, color, email: user?.email, name, price, size: IsSize, Quantity, discount, brand, category }
 
-   
+
+
 
      const handleAddCard = () => {
           axiosSecure.post('/product/addcard', { addcard }).then(result => {
                console.log(result);
                if (result) {
-                    const [, isLoading, refetch] = GetCardData();
-                    refetch();
+                    Navigate('/dashboard/shopping');
                     toast.success('সফলভাবে   কার্ড যুক্ হয়েছে')
                }
           }).catch(error => {

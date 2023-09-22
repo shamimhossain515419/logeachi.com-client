@@ -9,18 +9,22 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import { ThemeProvider } from "@material-tailwind/react";
 
 const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <RouterProvider router={Route}>
 
-    <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <RouterProvider router={Route}>
+          </RouterProvider>
+        </AuthProvider>
+      </QueryClientProvider>
+    </ThemeProvider>
 
-        </RouterProvider>
-      </AuthProvider>
-    </QueryClientProvider>
+
 
 
 

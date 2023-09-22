@@ -22,12 +22,12 @@ return (
                               <div className=" flex gap-2 md:gap-5  items-center">
                                    <div onClick={() => setIsOpen(true)} className="  block md:hidden"><FaBars></FaBars> </div>
                                    <div className=" flex items-center">
-                                   <img className=" h-[80px]" src={logo} alt="" />
+                                   <img className=" h-[40px]" src={logo} alt="" />
                                        <h1 className=" text-xl  primaryColor font-bold md:text-2xl "> Logeachi.com</h1>
                                    </div>
                                    <div className=" hidden md:flex gap-3 items-center">
                                         <Link className=" text-base md:text-lg  font-medium">Home</Link>
-                                        <Link className=" text-base md:text-lg font-medium">Shop</Link>
+                                        <Link to={'/product/category'} className=" text-base md:text-lg font-medium">Shop</Link>
                                         <Link className=" hidden xl:block text-base md:text-lg font-medium">Discount center</Link>
                                         <Link className=" text-base md:text-lg font-medium">How to Order</Link>
                                    </div>

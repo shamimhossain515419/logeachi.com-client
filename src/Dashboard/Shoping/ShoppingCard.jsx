@@ -2,6 +2,7 @@ import { BsTrash } from "react-icons/bs";
 import useAxiosSecure from "../../Component/AxioxSecour/AxiosSecure";
 import GetCardData from "../../api/GetCardData";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 
 const ShoppingCard = ({ card }) => {
@@ -40,9 +41,9 @@ const ShoppingCard = ({ card }) => {
                               <div onClick={() => handleDelete(_id)} className=" my-5 bg-[#ff26cc36] text-center cursor-pointer bg-black text-white  rounded py-2 px-4 text-base md:text-xl font-normal">
                                    <BsTrash className=" text-center inline-block text-red-500" size={24}></BsTrash>
                               </div>
-                              <div className=" uppercase bg-black my-5 text-white  text-center rounded py-2 px-4 cursor-pointer text-base md:text-xl font-normal">
+                              <Link to={`/dashboard/paymentcard/${_id}`} className=" uppercase bg-black my-5 text-white  text-center rounded py-2 px-4 cursor-pointer text-base md:text-xl font-normal">
                                    checkout
-                              </div>
+                              </Link>
                          </div>
                     </div>
 
