@@ -13,11 +13,8 @@ import {
 } from 'firebase/auth'
 import app from "../../FirebaseConfig/FirebaseConfig";
 import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
 
 
-
-// import axios from "axios";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app)
@@ -27,6 +24,7 @@ const AuthProvider = ({ children }) => {
      const [loading, setLoading] = useState(true)
      const [user, setUser] = useState(null);
 
+     const [search, setSearch] = useState("")
      const GoogleProvider = new GoogleAuthProvider();
      const createUser = (email, password) => {
           return createUserWithEmailAndPassword(auth, email, password)
@@ -123,7 +121,7 @@ const AuthProvider = ({ children }) => {
           Login,
           loading,
           user,
-          LogOut
+          LogOut, search, setSearch
      }
      return (
           <div>

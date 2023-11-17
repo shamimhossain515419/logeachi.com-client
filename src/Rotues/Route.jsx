@@ -47,7 +47,7 @@ const Route = createBrowserRouter([
                {
                     path: '/product/:id',
                     element: <Product></Product>,
-                    loader: ({ params }) => fetch(`https://logeachi-com-server-hn3xlq1pi-shamimusman515419.vercel.app/product/${params.id}`)
+                    loader: ({ params }) => fetch(`https://logeachi-com-server.vercel.app/product/${params.id}`)
                },
                {
                     path: '/dashboard/paymentcard/:id',

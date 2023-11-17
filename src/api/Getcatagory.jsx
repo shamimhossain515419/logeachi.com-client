@@ -6,7 +6,7 @@ const GetCategory = (category) => {
 
      const { data, refetch, isLoading } =  useQuery({
           queryKey: ['product',category],
-          queryFn: () =>  axios.get(`https://logeachi-com-server-boww0y99d-shamimusman515419.vercel.app /product/category/${category}`),
+          queryFn: () =>  axios.get(`https://logeachi-com-server.vercel.app/product/category/${category}`),
        })
 
      return [data,refetch,isLoading]

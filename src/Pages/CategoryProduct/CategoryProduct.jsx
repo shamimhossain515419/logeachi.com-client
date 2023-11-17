@@ -2,30 +2,37 @@ import { useEffect, useState } from "react";
 import Container from "../../Component/Container";
 import { BiChevronDown } from "react-icons/bi";
 import ProductCard from "../../Component/ProductCard/ProductCard";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SectionTitle from "../../Component/Title/SectionTitle";
 import RangeSlider from 'react-range-slider-input';
 import 'react-range-slider-input/dist/style.css';
+import { useContext } from "react";
+import { AuthContext } from "../../Rotues/Authprovider/Authprovider";
 
 const CategoryProduct = () => {
 
      const [product, setProduct] = useState([]);
      const [limit, setSetLimit] = useState(6)
+     const [maxPrice, setMaxPrice] = useState(1000)
+     const [minPrice, setMinPrice] = useState(0)
+     const [name, setName] = useState("")
      const [category, setCategory] = useState(["Default", false]);
-
+     const { user,search, setSearch } = useContext(AuthContext)
+     const navigate = useNavigate();
+     console.log(category);
 
      useEffect(() => {
 
 
-          if (category?.[1] == true) {
-               console.log("Default");
-               fetch(`https://logeachi-com-server-boww0y99d-shamimusman515419.vercel.app /product/category/${category?.[0]}`).then(res => res.json()).then(data => setProduct(data));
 
-          } else {
-               fetch('https://logeachi-com-server-hn3xlq1pi-shamimusman515419.vercel.app/product').then(res => res.json()).then(data => setProduct(data));
-          }
+          console.log("Default");
+          fetch(`https://logeachi-com-server.vercel.app/product/category/${category?.[0]}`).then(res => res.json()).then(data => setProduct(data));
 
-     }, [category]);
+
+          fetch(`https://logeachi-com-server.vercel.app/product?category=${search}$minprice=${minPrice}&maxprice=${maxPrice}&name=${name}`).then(res => res.json()).then(data => setProduct(data));
+
+
+     }, [category, maxPrice, minPrice, search, name]);
 
      const handleSelectCatagory = (e) => {
           const data = e?.target?.value;
@@ -36,8 +43,13 @@ const CategoryProduct = () => {
           }
      }
 
+     useEffect(() => {
+          navigate(`/product/category?category=${search}$minprice=${minPrice}&maxprice=${maxPrice}&name=${name}`)
+     }, [search, navigate, maxPrice, minPrice])
+
      return (
           <div>
+
                <Container>
                     <div> <div className=" flex gap-4 items-center py-5 ">
                          <Link className=" text-xl   font-semibold uppercase" to={'/'}> Home</Link>
@@ -59,10 +71,10 @@ const CategoryProduct = () => {
                                    <div>
                                         <div className=" w-full flex gap-3 items-center  py-2">
                                              <span className=" text-2xl font-bold">৳</span>
-                                             <input required className="  py-2 px-3  w-full   outline-none   my-2 border  focus:border-[#e50ae9] focus:bg-[#cf43ae5a]" type="text" name="name" placeholder="00" id="" />
+                                             <input onChange={(e) => setMinPrice(e.target.value)} defaultValue={minPrice} required className="  py-2 px-3  w-full   outline-none   my-2 border  focus:border-[#e50ae9] focus:bg-[#cf43ae5a]" type="number" name="name" placeholder="00" id="" />
                                              <p className=" text-3xl font-bold "> - </p>
                                              <span className=" text-2xl font-bold">৳</span>
-                                             <input required className="  py-2 px-3  w-full   outline-none   my-2 border  focus:border-[#e50ae9] focus:bg-[#cf43ae5a]" type="text" name="name" placeholder="00" id="" />
+                                             <input defaultValue={maxPrice} onChange={(e) => setMaxPrice(e.target.value)} required className="  py-2 px-3  w-full   outline-none   my-2 border  focus:border-[#e50ae9] focus:bg-[#cf43ae5a]" type="number" name="name" placeholder="00" id="" />
 
                                         </div>
                                         <div>

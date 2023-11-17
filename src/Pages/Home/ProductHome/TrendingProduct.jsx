@@ -12,7 +12,7 @@ const TrendingProduct = () => {
 
      const [limit, setSetLimit] = useState(6)
      useEffect(() => {
-          fetch('https://logeachi-com-server-hn3xlq1pi-shamimusman515419.vercel.app/product').then(res => res.json()).then(data => setProduct(data))
+          fetch('https://logeachi-com-server.vercel.app/product').then(res => res.json()).then(data => setProduct(data))
      }, []);
  
      const Trending =product?.filter(item=> item?.runningCategory === "Trending");

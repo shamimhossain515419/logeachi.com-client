@@ -25,13 +25,15 @@ const Product = () => {
      const Navigate = useNavigate();
      useEffect(() => {
           const SingleDataCount = async () => {
-               const res = await fetch(`https://logeachi-com-server-hn3xlq1pi-shamimusman515419.vercel.app/product/${params.id}`);
+               const res = await fetch(`https://logeachi-com-server.vercel.app/product/${params.id}`);
                const data = await res.json();
                setSingleData(data)
                setImage(data?.image1)
           }
           SingleDataCount()
      }, [params])
+
+     console.log(params);
 
      const { image1, name, description, color, price, image2, image3, reading,
           Sleeve, Occasion, discount, category, brand, size, runningCategory,
@@ -54,6 +56,7 @@ const Product = () => {
 
 
      const handleAddCard = () => {
+          console.log(addcard);
           axiosSecure.post('/product/addcard', { addcard }).then(result => {
                console.log(result);
                if (result) {
@@ -200,7 +203,7 @@ const Product = () => {
 
 
 
-                         <div className=" mt-9  grid md:grid-cols-2 xl:grid-cols-4 gap-9">
+                         <div className=" mt-9  grid md:grid-cols-2 xl:grid-cols-3 gap-9">
                               {data?.data.slice(0, limit).map(item => <ProductCard key={item._id} card={item}></ProductCard>)}
                          </div>
 

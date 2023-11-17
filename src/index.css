@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-   font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+   font-family: 'Roboto', sans-serif;
    
 }
 
@@ -13,7 +13,7 @@ body {
 
 .primaryColor {
    color: #e50ae9;
-   color: #e600e6c0;
+   
 }
 
 .shadowbox {

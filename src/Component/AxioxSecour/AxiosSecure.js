@@ -5,7 +5,7 @@ import { AuthContext } from '../../Rotues/Authprovider/Authprovider';
 
 
 const axiosSecure = axios.create({
-     baseURL: 'https://logeachi-com-server-boww0y99d-shamimusman515419.vercel.app ',
+     baseURL: 'https://logeachi-com-server.vercel.app',
 });
 
 const useAxiosSecure = () => {
