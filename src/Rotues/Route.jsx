@@ -17,12 +17,14 @@ import PrivateRoute from "../Component/PrivateRoute/PrivateRoute";
 import AdminDashboard from "../AdminDashboard/AdminDashbard";
 import PaymentCard from "../Pages/PaymentCard/PaymentCard";
 import CategoryProduct from "../Pages/CategoryProduct/CategoryProduct";
+import ErrorPage from "../Component/ErrorPage/ErrorPage";
 
 
 const Route = createBrowserRouter([
      {
           path: '/',
           element: <Main></Main>,
+          errorElement: <ErrorPage></ErrorPage>,
           children: [
                {
                     path: '/',

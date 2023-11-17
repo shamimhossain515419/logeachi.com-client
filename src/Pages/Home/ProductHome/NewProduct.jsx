@@ -11,7 +11,7 @@ const NewProduct = () => {
 
      const [limit, setSetLimit] = useState(6)
      useEffect(() => {
-          fetch('https://logeachi-com-server.vercel.app/product').then(res => res.json()).then(data => setProduct(data))
+          fetch(`https://logeachi-com-server.vercel.app/product?category=$minprizce=${0}&maxprice=${10000}&name=`).then(res => res.json()).then(data => setProduct(data))
      }, []);
 
 

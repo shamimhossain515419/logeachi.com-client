@@ -17,6 +17,7 @@ const ProductCard = ({ card }) => {
      const handlewishList = () => {
           if (user) {
                axiosSecure.post('/product/wishlist', { wishList }).then(result => {
+                    console.log(result);
                     if (result) {
                          // refetch();
                          toast.success('সফলভাবে   ইচ্ছা পূরণ  হয়েছে!')
@@ -44,7 +45,7 @@ const ProductCard = ({ card }) => {
                          <h2 className=" text-base md:text-lg  font-thin my-2"> {description?.slice(0, 27)}... </h2>
                          <h1 className=' text-lg md:text-2xl font-semibold'>  ৳ {price}</h1>
                          <div className='  flex gap-2 items-center justify-between my-2 '>
-                              <Link  to={`/product/${_id}`} className=" bg-black text-white hover:bg-[#e600e6fa] px-8 py-2 cursor-pointer rounded-md ">
+                              <Link to={`/product/${_id}`} className=" bg-black text-white hover:bg-[#e600e6fa] px-8 py-2 cursor-pointer rounded-md ">
                                    <h1 className="  uppercase text-base md:text-md font-semibold ">  Add Card</h1>
                               </Link>
                               <div onClick={handlewishList} className=' hover:text-[#e600e6fa] bg-black text-white cursor-pointer  rounded-full p-2 '>

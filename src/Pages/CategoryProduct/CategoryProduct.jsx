@@ -15,24 +15,15 @@ const CategoryProduct = () => {
      const [limit, setSetLimit] = useState(6)
      const [maxPrice, setMaxPrice] = useState(1000)
      const [minPrice, setMinPrice] = useState(0)
-     const [name, setName] = useState("")
+     const [doemon, setnodeMone] = useState("")
      const [category, setCategory] = useState(["Default", false]);
-     const { user,search, setSearch } = useContext(AuthContext)
+     const { user, search, setSearch } = useContext(AuthContext)
      const navigate = useNavigate();
-     console.log(category);
+     console.log(doemon);
 
      useEffect(() => {
-
-
-
-          console.log("Default");
-          fetch(`https://logeachi-com-server.vercel.app/product/category/${category?.[0]}`).then(res => res.json()).then(data => setProduct(data));
-
-
-          fetch(`https://logeachi-com-server.vercel.app/product?category=${search}$minprice=${minPrice}&maxprice=${maxPrice}&name=${name}`).then(res => res.json()).then(data => setProduct(data));
-
-
-     }, [category, maxPrice, minPrice, search, name]);
+          fetch(`https://logeachi-com-server.vercel.app/product?category=${search}$minprizce=${minPrice}&maxprice=${maxPrice}&name=${search}`).then(res => res.json()).then(data => setProduct(data));
+     }, [category, maxPrice, minPrice, search]);
 
      const handleSelectCatagory = (e) => {
           const data = e?.target?.value;
@@ -44,7 +35,7 @@ const CategoryProduct = () => {
      }
 
      useEffect(() => {
-          navigate(`/product/category?category=${search}$minprice=${minPrice}&maxprice=${maxPrice}&name=${name}`)
+          navigate(`/product/category?category=${search}$minprice=${minPrice}&maxprice=${maxPrice}&name=${search}`)
      }, [search, navigate, maxPrice, minPrice])
 
      return (
@@ -104,7 +95,7 @@ const CategoryProduct = () => {
 
                                              <SectionTitle title={"Brands"}></SectionTitle>
                                              <div className="  flex  items-center gap-3 mb-1 ">
-                                                  <input className=" " type="checkbox" name="" id="" />
+                                                  <input onChange={(e) => setnodeMone(e.checked)} className=" " type="checkbox" name="" id="" />
                                                   <p className=" tex-md   font-medium">     Anomos Apparel</p>
                                              </div>
                                              <div className="  flex  items-center gap-3 mb-1 ">

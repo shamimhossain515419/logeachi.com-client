@@ -21,6 +21,7 @@ const Navbar = () => {
      //        console.log('Enter key pressed for input field');
      //      }
      //    };
+     console.log(search);
 
      return (
           <div className=" z-50  shadow-md  primaryBg   bg-white  w-full fixed top-0 left-0 right-0   py-1 px-1 md:px-6">
@@ -43,7 +44,7 @@ const Navbar = () => {
 
                               <div>
                                    <div className=" relative  w-full   md:w-[350px]">
-                                        <input onKeyPress={(e) => e.key === "Enter" ? navigete(`/product/category?category=${search}&minprice=0&maxprice=1000&name=`) : "/"} onChange={(e) => { (e.target.value) }} className=" text-xl  rounded relative w-full outline-none border  border-[#e600e6c0]  placeholder:text-black md:py-2 px-2 bg-white " type="text" placeholder="Search  ..." />
+                                        <input onKeyPress={(e) => e.key === "Enter" ? navigete(`/product/category?category=${search}&minprice=0&maxprice=1000&name=`) : "/"} onChange={(e) => { setSearch(e.target.value) }} className=" text-xl  rounded relative w-full outline-none border  border-[#e600e6c0]  placeholder:text-black md:py-2 px-2 bg-white " type="text" placeholder="Search  ..." />
                                         <CiSearch className=" md:mt-1 cursor-pointer absolute top-1  right-1 " size={24} />
                                    </div>
                               </div>

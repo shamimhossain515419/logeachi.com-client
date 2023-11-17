@@ -8,7 +8,7 @@ const ProductHome = () => {
     
 
      useEffect(()=>{
-          fetch('https://logeachi-com-server-hhdi842lb-shamimusman515419.vercel.app/category').then(res=>res.json()).then(data=> setCategory(data))
+          fetch('https://logeachi-com-server.vercel.app/category').then(res=>res.json()).then(data=> setCategory(data))
      },[1000]);
 
      return (
