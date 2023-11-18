@@ -36,7 +36,7 @@ const Product = () => {
      console.log(params);
 
      const { image1, name, description, color, price, image2, image3, reading,
-          Sleeve, Occasion, discount, category, brand, size, runningCategory,
+          Sleeve, Occasion, discount,_id, category, brand, size, runningCategory,
           quality } = singleData;
 
      const [data,] = GetCategory(category);
@@ -50,7 +50,7 @@ const Product = () => {
           setQuantity(Quantity - 1)
      }
 
-     const addcard = { image1, description, color, email: user?.email, name, price, size: IsSize, Quantity, discount, brand, category }
+     const addcard = { image1,productId:_id, description, color, email: user?.email, name, price, size: IsSize, Quantity, discount, brand, category }
 
 
 

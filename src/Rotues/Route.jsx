@@ -18,6 +18,8 @@ import AdminDashboard from "../AdminDashboard/AdminDashbard";
 import PaymentCard from "../Pages/PaymentCard/PaymentCard";
 import CategoryProduct from "../Pages/CategoryProduct/CategoryProduct";
 import ErrorPage from "../Component/ErrorPage/ErrorPage";
+import PaymentState from "../Dashboard/payment/Payment";
+import FailPayment from "../Dashboard/payment/FailPayment/FailPayment";
 
 
 const Route = createBrowserRouter([
@@ -45,6 +47,14 @@ const Route = createBrowserRouter([
                {
                     path: '/loading',
                     element: <Loading></Loading>
+               },
+               {
+                    path: "/payment/success/:id",
+                    element: <PaymentState></PaymentState>
+               },
+               {
+                    path: "/payment/fail/:id",
+                    element: <FailPayment></FailPayment>
                },
                {
                     path: '/product/:id',

@@ -23,6 +23,7 @@ const auth = getAuth(app)
 const AuthProvider = ({ children }) => {
      const [loading, setLoading] = useState(true)
      const [user, setUser] = useState(null);
+     const [userinfo, setUserinfo] = useState(null);
      const [open, setOpen] = useState(false)
      const [address, setAddress] = useState({})
      const [search, setSearch] = useState("")
@@ -69,10 +70,13 @@ const AuthProvider = ({ children }) => {
 
 
      useEffect(() => {
+          if (user?.email) {
+               fetch(`https://logeachi-com-server.vercel.app/address?email=${user?.email}`).then(res => res.json()).then(data => setAddress(data))
 
-          fetch(`https://logeachi-com-server.vercel.app/address?email=${user?.email}`, { method: "GET" }).then(res => res.json()).then(data => setAddress(data))
+          }
 
-     }, [user])
+
+     }, [user?.email])
 
      useEffect(() => {
           const unsubcript = onAuthStateChanged(auth, currentUser => {
@@ -86,6 +90,7 @@ const AuthProvider = ({ children }) => {
                               localStorage.setItem('access-token', data?.data?.token);
 
                               axios.get(`https://logeachi-com-server.vercel.app/users?email=${currentUser?.email}`).then(result => {
+                                   setUserinfo(result?.data)
                                    if (!result?.data) {
                                         const UserData = { name: currentUser?.displayName, email: currentUser?.email, status: "user" }
                                         axios.post('https://logeachi-com-server.vercel.app/users', UserData).then(result => {
@@ -121,8 +126,8 @@ const AuthProvider = ({ children }) => {
           verifyUser,
           updateProfilePhoto,
           Login, open, setOpen,
-          loading,address,setAddress,
-          user,
+          loading, address, setAddress,
+          user, userinfo,
           LogOut, search, setSearch
      }
      return (
