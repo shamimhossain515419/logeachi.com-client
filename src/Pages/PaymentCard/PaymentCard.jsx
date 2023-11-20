@@ -20,7 +20,7 @@ const PaymentCard = () => {
      let totalPrice = filter?.price * filter?.Quantity;
      const discountAmount = (totalPrice * filter?.discount) / 100;
      const TotalPrice = totalPrice - discountAmount;
-     console.log(filter);
+     console.log(filter,"shamimdf");
 
 
 
@@ -32,7 +32,7 @@ const PaymentCard = () => {
           const address = from.address.value;
           const post = from.post.value;
           const formData = {
-               ProductName: filter?.name, userId: userinfo?._id, productId: new Object(filter?._id)
+               ProductName: filter?.name, cardId:filter?._id , userId: userinfo?._id, productId: filter?.productId
                , price: TotalPrice, email: user?.email, name, post, address, number,
           }
           console.log(formData);
@@ -52,7 +52,9 @@ const PaymentCard = () => {
      console.log(address);
      const handlePayment = () => {
           const formData = {
-               ProductName: filter?.name, userId: userinfo?._id,productId: new Object(filter?._id)
+               ProductName: filter?.name, cardId:filter?._id ,
+              userId: userinfo?._id,productId:  (filter?.productId
+                    )
                , price: TotalPrice, email: user?.email, name: user?.displayName, post: address?.postcode
                , address: address?.city, country: address?.country
           }

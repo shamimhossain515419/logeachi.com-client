@@ -9,7 +9,6 @@ import MainDashboard from "../Dashboard/MainDasgboard/MainDashbaord";
 import Profile from "../Dashboard/Profile/Profile";
 import Setting from "../Dashboard/setting/Setting";
 import Shopping from "../Dashboard/Shoping/Shopping";
-import Payment from "../Dashboard/payment/Payment";
 import ProductHistory from "../Dashboard/Producthistory/ProductHistory";
 import WishList from "../Dashboard/WishList/WishList";
 import Loading from "../Component/Loading/Loading";
@@ -20,6 +19,7 @@ import CategoryProduct from "../Pages/CategoryProduct/CategoryProduct";
 import ErrorPage from "../Component/ErrorPage/ErrorPage";
 import PaymentState from "../Dashboard/payment/Payment";
 import FailPayment from "../Dashboard/payment/FailPayment/FailPayment";
+import PaymentHistory from "../Component/PaymentHistory/PaymentHistory";
 
 
 const Route = createBrowserRouter([
@@ -91,7 +91,7 @@ const Route = createBrowserRouter([
                          },
                          {
                               path: '/dashboard/payment',
-                              element: <Payment></Payment>
+                              element: <PaymentHistory></PaymentHistory>
                          },
                          {
                               path: '/dashboard/history',
