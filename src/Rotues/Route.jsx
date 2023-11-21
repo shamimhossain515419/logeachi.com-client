@@ -20,6 +20,9 @@ import ErrorPage from "../Component/ErrorPage/ErrorPage";
 import PaymentState from "../Dashboard/payment/Payment";
 import FailPayment from "../Dashboard/payment/FailPayment/FailPayment";
 import PaymentHistory from "../Component/PaymentHistory/PaymentHistory";
+import Subscript from "../Component/Subscript/Subscript";
+import Message from "../Component/message/Message";
+import Oderprosses from "../Component/OrderProsses/Oderprosses";
 
 
 const Route = createBrowserRouter([
@@ -55,6 +58,10 @@ const Route = createBrowserRouter([
                {
                     path: "/payment/fail/:id",
                     element: <FailPayment></FailPayment>
+               },
+               {
+                    path: "/order-process",
+                    element: <Oderprosses></Oderprosses>
                },
                {
                     path: '/product/:id',
@@ -100,6 +107,14 @@ const Route = createBrowserRouter([
                          {
                               path: '/dashboard/wishlist',
                               element: <WishList></WishList>
+                         },
+                         {
+                              path: '/dashboard/subscribe',
+                              element: <Subscript></Subscript>
+                         },
+                         {
+                              path: '/dashboard/massage',
+                              element: <Message></Message>
                          },
 
                     ]

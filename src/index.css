@@ -4,7 +4,7 @@
 
 body {
    font-family: 'Roboto', sans-serif;
-   
+
 }
 
 .primaryBg {
@@ -13,7 +13,7 @@ body {
 
 .primaryColor {
    color: #e50ae9;
-   
+
 }
 
 .shadowbox {
@@ -23,12 +23,24 @@ body {
 .bottonBox {
    background: black;
    color: white;
-   padding: 10px 5px;
+   padding: 7px 15px;
    border-radius: 8px;
 
 }
-.bottonBox:hover{
+
+.bottonBox:hover {
    background-color: #e50ae9;
    color: white;
 }
 
+
+.lingHight {
+   line-height: 20px;
+   letter-spacing: 5px;
+}
+
+
+
+.modalShadow {
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

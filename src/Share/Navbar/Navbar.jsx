@@ -38,7 +38,7 @@ const Navbar = () => {
                                         <Link className=" text-base md:text-lg  font-medium">Home</Link>
                                         <Link to={'/product/category'} className=" text-base md:text-lg font-medium">Shop</Link>
                                         <Link className=" hidden xl:block text-base md:text-lg font-medium">Discount center</Link>
-                                        <Link className=" text-base md:text-lg font-medium">How to Order</Link>
+                                        <Link to={'/order-process'} className=" text-base md:text-lg font-medium">How to Order</Link>
                                    </div>
                               </div>
 

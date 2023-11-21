@@ -16,7 +16,7 @@ const Dashboard = () => {
      const [currentPath, setCurrentPath] = useState("dashboard");
 
      return (
-          <div className=" my-10">
+          <div className=" py-10">
                <Container>
 
                     <div className=" mx-auto  max-w-[1000px]  py-8">
@@ -63,11 +63,7 @@ const Dashboard = () => {
                                         isActive ? "   primaryBg  text-base px-4 flex items-center gap-3  w-full py-2  font-normal capitalize text-white" : "  flex items-center gap-3  w-full bg-black px-4  py-2  text-base  font-normal capitalize text-white "
                                    } to={'/dashboard/payment'}>   <MdPayments size={24}></MdPayments> Payment info   </NavLink>
                               </div>
-                              <div onClick={() => setCurrentPath("Product history")} className=" max-w-[350px] md:w-[350px] mt-1 ">
-                                   <NavLink className={({ isActive }) =>
-                                        isActive ? " primaryBg  text-base px-4 flex items-center gap-3  w-full py-2  font-normal capitalize text-white" : "  flex items-center gap-3  w-full bg-black px-4  py-2  text-base  font-normal capitalize text-white "
-                                   } to={'/dashboard/history'}>   <FiRefreshCcw size={24}></FiRefreshCcw> Product history  </NavLink>
-                              </div>
+ 
                               <div onClick={() => setCurrentPath("My wishlist")} className=" max-w-[350px] md:w-[350px] mt-1 ">
                                    <NavLink className={({ isActive }) =>
                                         isActive ? "   primaryBg  text-base px-4 flex items-center gap-3  w-full py-2  font-normal capitalize text-white" : "  flex items-center gap-3  w-full bg-black px-4  py-2  text-base  font-normal capitalize text-white "

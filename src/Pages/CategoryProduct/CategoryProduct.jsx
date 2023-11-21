@@ -8,6 +8,7 @@ import RangeSlider from 'react-range-slider-input';
 import 'react-range-slider-input/dist/style.css';
 import { useContext } from "react";
 import { AuthContext } from "../../Rotues/Authprovider/Authprovider";
+import ProductNotFound from "../../Component/ProductNotFond/ProdcutNotFound";
 
 const CategoryProduct = () => {
 
@@ -223,11 +224,18 @@ const CategoryProduct = () => {
                                    </div>
                               </div>
 
-                              <div className=" grid md:grid-cols-3 gap-5 xl:grid-cols-4 ">
-
+                              <div>
                                    {
-                                        product?.map(item => <ProductCard card={item} key={item?._id}></ProductCard>)
+                                        product?.length  >0 ? <div  className=" grid md:grid-cols-3 gap-5 xl:grid-cols-4 ">{
+                                             product?.map(item => <ProductCard card={item} key={item?._id}></ProductCard>)
+                                        }</div> : 
+                                        <div>
+                                          <ProductNotFound  setSearch={setSearch} title={"Product Not Found"}></ProductNotFound>
+
+                                        </div>
                                    }
+
+
                               </div>
 
 

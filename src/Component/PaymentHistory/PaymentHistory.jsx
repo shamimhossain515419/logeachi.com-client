@@ -8,7 +8,7 @@ import moment from "moment/moment";
 const PaymentHistory = () => {
 
      const [axiosSecure] = useAxiosSecure();
-     const { user, userinfo } = useContext(AuthContext);
+     const { user } = useContext(AuthContext);
      const [paymentCard, setPaymentCard] = useState([]);
 
      useEffect(() => {
@@ -31,7 +31,7 @@ const PaymentHistory = () => {
                     paymentCard?.map(item => <div key={item?._id} className="projcard-container">
 
                          <div className="projcard projcard-blue">
-                              <div className="projcard-innerbox">
+                              <div className="projcard-innerbox  gap-2">
                                    <img className="projcard-img" src={item?.product?.[0]?.image1} />
                                    <div className="projcard-textbox">
                                         <div className="projcard-title primaryColor capitalize"> {item?.product?.[0]?.name} </div>
@@ -44,13 +44,14 @@ const PaymentHistory = () => {
                                              <div className="  text-xl font-medium">
                                                   Date: {moment(item?.createdAt).format("dddd, MMMM Do YYYY,")}
                                              </div>
+                                             <h1 className="  text-xl font-medium"> Address: {item?.address}  </h1>
 
                                         </div>
 
 
-                                        <div className="projcard-tagbox">
-                                             <span className="projcard-tag"> ৳ {item?.price} </span>
-                                             <span className="projcard-tag"> Details </span>
+                                        <div className="projcard-tagbox  ">
+                                             <span className="projcard-tag cursor-pointer text-base md:text-xl py-1"> ৳ {item?.price} </span>
+                                             <span className="projcard-tag cursor-pointer text-base md:text-xl py-1"> Details </span>
                                         </div>
                                    </div>
                               </div>

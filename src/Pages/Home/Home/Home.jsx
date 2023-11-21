@@ -13,12 +13,28 @@ import banner3 from '../../../../public/modal.jpg'
 import banner5 from '../../../../public/woman.jpg'
 
 import NewProduct from "../ProductHome/NewProduct";
+import TeandingModal from "../../../Component/TreandingModal/TeandingModal";
+import { useState } from "react";
 const Home = () => {
+
+
+
+    
+
+     const [Open, setOpen] = useState(true)
+
      return (
           <div>
                <Banner></Banner>
                <ProductHome></ProductHome>
                <FeaturedProduct></FeaturedProduct>
+
+               <div>
+                    {Open ? <div className=" w-full flex justify-center items-center gap-2 min-h-screen fixed top-2 left-- right-0 bottom-0 bg-[#000000ab]">
+                         <TeandingModal setOpen={setOpen}></TeandingModal>
+                    </div> : null
+                    }
+               </div>
 
                <Container>
                     <div className=" my-12 flex gap-5 items-center ">
