@@ -16,24 +16,33 @@ const TeandingModal = ({ setOpen }) => {
      const [singleData, setSingleData] = useState({});
      const [Image, setImage] = useState("")
      const [axiosSecure] = useAxiosSecure();
+     const randomNumber = Math.floor(Math.random() * 8) + 1;
+     console.log(randomNumber);
      useEffect(() => {
           const SingleDataCount = async () => {
-               const res = await fetch(`https://logeachi-com-server.vercel.app/product/655cf48b097a363421cc3295`);
-               const data = await res.json();
-               setSingleData(data)
-               setImage(data?.image1)
+               fetch(`https://logeachi-com-server.vercel.app/product?category=$minprizce=${0}&maxprice=${10000}&name=`).then(res => res.json()).then(data => {
+                    const projectData = data.sort((a, b) => new Date(b.addTime) - new Date(a.addTime));
+                   
+                    const ProductData = projectData?.[randomNumber];
+                    setSingleData(ProductData);
+                    setImage(ProductData?.image1)
+               }
+               )
+
+
           }
           SingleDataCount()
      }, [])
-
-     const { image1, name, description, color, price, image2, image3, reading,
-          Sleeve, Occasion, discount, _id, category, brand, size,
+   
+    
+     const { image1, name, description, color, price, discount, _id, category, brand, size,
           quality } = singleData;
 
      const addcard = { image1, productId: _id, quality, description, color, email: user?.email, name, price, size, discount, brand, category }
 
+          
 
-
+     
 
      const handleAddCard = () => {
           if (user?.email) {
@@ -62,8 +71,8 @@ const TeandingModal = ({ setOpen }) => {
           <div className=" mx-2">
                <div className=" max-w-[1000px] mx-auto  bg-white modalShadow md:p-5 px-2  rounded-lg">
                     <div className='relative py-2 '>
-                         <div onClick={() => setOpen(false)} className=" absolute top-2 right-2 cursor-pointer py-2      ">
-                              <IoClose size={28} />
+                         <div onClick={() => setOpen(false)} className=" text-red-500 z-50 absolute top-1 right-1 cursor-pointer py-2      ">
+                              <IoClose size={48} />
                          </div>
 
                          <div className=" grid   xl:grid-cols-5 md:gap-5 xl:gap-8  items-center  ">
@@ -90,7 +99,7 @@ const TeandingModal = ({ setOpen }) => {
                                              name='rating'
                                         />
                                         <div>
-                                             <h1 className="  text-base md:text-2xl font-bold">৳ {singleData?.price}=/</h1>
+                                             <h1 className="    text-[#60a103] text-base md:text-2xl font-bold">৳ {singleData?.price}=/</h1>
                                         </div>
                                    </div>
                                    <div className=" w-full md:h-[350px] overflow-hidden my-5 ">
@@ -108,8 +117,8 @@ const TeandingModal = ({ setOpen }) => {
                               <div className=" mt-5 flex items-center justify-center gap-4">
 
 
-                                   <div onClick={handleAddCard} className="   text-white py-2 px-6 cursor-pointer rounded-lg bg-black  hover:bg-[#e50ae9] hover:text-white text-base  font-normal md:text-xl    ">Add to Card</div>
-                                   <Link to={`/product/${singleData?._id}`} className="  hover:text-white py-2 px-6  cursor-pointer rounded-lg hover:bg-black  bg-[#e50ae9] text-white text-base  font-normal md:text-xl   ">View Details</Link>
+                                   <div onClick={handleAddCard} className="   text-white py-2 px-6 cursor-pointer rounded-lg  primaryBg  hover:bg-[#60a103] hover:text-white text-base  font-normal md:text-xl    ">Add to Card</div>
+                                   <Link to={`/product/${singleData?._id}`} className="  hover:text-white py-2 px-6  cursor-pointer rounded-lg bg-[#60a103]  hover:bg-[#18604a] text-white text-base  font-normal md:text-xl   ">View Details</Link>
                               </div>
                          </div>
 

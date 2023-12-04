@@ -9,7 +9,7 @@ import { useState } from "react";
 const Footer = () => {
      const [Open, setOpen] = useState(false)
      return (
-          <div className=" bg-black px-2 text-white  pb-20 pt-11">
+          <div className=" bg-[#18604a]  mt-2 px-2 text-white  pb-20 pt-11">
                <div>
 
                     <Container>
@@ -19,64 +19,62 @@ const Footer = () => {
                                    <div>
                                         <img className=" h-[100px]" src={logo} alt="" />
                                    </div>
-                                   <div className=" flex gap-4 items-center  mt-5">
-                                        <Link to={'https://google.com'}> <FcGoogle size={24}></FcGoogle></Link>
-                                        <Link className="  text-blue-500"  to={'https://facebook.com'}>  <BsFacebook size={24}></BsFacebook></Link>
-                                        <Link className="  text-[#e742c6]"  to={'https://insteagam.com'}> <BsInstagram size={24}></BsInstagram></Link>
-                                        <Link className="  text-[#3686ff]"  to={'https://twitter.com'}> <BsTwitter size={24}></BsTwitter></Link>
-                                        <Link className="  text-blue-500"  to={'https://linkedin.com'}>   <BsLinkedin size={24}></BsLinkedin></Link>
+                                   <div className=" text-black flex gap-4 items-center  mt-5">
+                                        <Link className="bg-white p-2  rounded-full hover:bg-[#60a103]"  to={'https://google.com'}> <FcGoogle size={20}></FcGoogle></Link>
+                                        <Link className=" bg-white p-2  rounded-full hover:bg-[#60a103]   "  to={'https://facebook.com'}>  <BsFacebook size={20}></BsFacebook></Link>
+                                        <Link className="bg-white p-2  rounded-full hover:bg-[#60a103]   "  to={'https://insteagam.com'}> <BsInstagram size={20}></BsInstagram></Link>
+                                        <Link className=" bg-white p-2  rounded-full hover:bg-[#60a103]  "  to={'https://twitter.com'}> <BsTwitter size={20}></BsTwitter></Link>
+                                        <Link className="  bg-white p-2  rounded-full hover:bg-[#60a103] "  to={'https://linkedin.com'}>   <BsLinkedin size={20}></BsLinkedin></Link>
 
                                    </div>
                               </div>
                               <div> <div className=" my-2">
-                                   <h1 className=" text-base md:text-xl xl:text-lg font-semibold primaryColor">WE ARE HERE TO HELP ! </h1>
-                                   <p className=" text-base font-medium md:text-md">  FAQ </p>
+                                   <h1 className=" text-base md:text-xl xl:text-lg font-semibold text-white">WE ARE HERE TO HELP ! </h1>
+                                   <Link to={'/order-process'} className=" text-base font-medium md:text-md">  FAQ </Link>
 
                               </div> <div className=" my-2">
-                                        <h1 className=" text-base md:text-xl xl:text-lg font-semibold primaryColor">24/7 CUSTOMER SUPPORT </h1>
+                                        <h1 className=" text-base md:text-xl xl:text-lg font-semibold text-white">24/7 CUSTOMER SUPPORT </h1>
                                         <p className=" text-base font-medium md:text-md flex gap-2 items-center">  <BsFillTelephoneFill></BsFillTelephoneFill> <span> +8801844696975</span> </p>
                                    </div>
                               </div>
 
                               <div>
-                                   <h1 className=" text-base md:text-xl xl:text-lg font-semibold primaryColor">KNOW US BETTER</h1>
+                                   <h1 className=" text-base md:text-xl xl:text-lg font-semibold text-white">KNOW US BETTER</h1>
                                    <div className=" flex  flex-col gap-2">
-                                        <Link to={'/'}>News </Link>
-                                        <Link to={'/'}> Privacy Policy</Link>
-                                        <Link to={'/'}> Shipping Rates & Policies</Link>
-                                        <Link to={'/'}> Terms and conditions</Link>
-                                        <Link to={'/'}>Return and Refund Policy </Link>
-                                        <Link to={'/'}>Taxes & Import duties </Link>
+                                   
+                                        <Link to={'/product/category'}> Shipping Rates & Policies</Link>
+                                        <Link to={'/dashboard/massage'}>Contact Us</Link>
+                                        
                                    </div>
 
                               </div>
 
                               <div>
-                                   <h1 className=" text-base md:text-xl xl:text-lg font-semibold primaryColor">MAKE MONEY WITH US</h1>
+                                   <h1 className=" text-base md:text-xl xl:text-lg font-semibold text-white">MAKE MONEY WITH US</h1>
 
                                    <p> Sell on Logeachi</p>
                                    <p> Seller terms & conditions</p>
-                                   <p className=" primaryColor"> Signup today for free and be the first to get notified on new updates</p>
+                                   <p className=" text-white"> Signup today for free and be the first to get notified on new updates</p>
 
                                    <div>
 
                                         {
                                              Open ? <>
                                                   <div className="md:flex items-center  my-3">
-                                                       <div className=" bg-[#262626] text-white px-4 py-2 ">
+                                                       <div className=" bg-[#60a103] text-white px-4 py-2 ">
                                                             <AiOutlineMail size={24}></AiOutlineMail>
                                                        </div>
                                                        <div className=" w-full ">
                                                             <input className=" px-4  text-black w-full outline-none  border-2 border-[#212021] py-2 " type="Email" name="" id="" placeholder="Email" />
                                                        </div>
 
-                                                       <div className=" bg-[#262626] inline-block text-white px-4 py-2 ">
+                                                       <div className=" bg-[#60a103] inline-block text-white px-4 py-2 ">
                                                             Singup
                                                        </div>
                                                   </div>
-                                                  <div onClick={() => setOpen(false)} className=" cursor-pointer my-2 bg-[#262626] inline-block duration-300  hover:bg-[#e50ae9]  text-white px-4 py-2 ">
+                                                  <div onClick={() => setOpen(false)} className=" cursor-pointer my-2 bg-[#60a103] inline-block duration-300  hover:bg-[#60a103]  text-white px-4 py-2 ">
                                                        Hide
-                                                  </div></> : <> <div onClick={() => setOpen(true)} className=" cursor-pointer my-2 bg-[#262626] inline-block duration-300  hover:bg-[#e50ae9]  text-white px-4 py-2 ">
+                                                  </div></> : <> <div onClick={() => setOpen(true)} className=" cursor-pointer my-2 bg-[#60a103] inline-block duration-300  hover:bg-[#60a103]  text-white px-4 py-2 ">
                                                        Show
                                                   </div></>
                                         }

@@ -9,7 +9,12 @@ const FeaturedProduct = () => {
 
      const [limit, setSetLimit] = useState(6)
      useEffect(() => {
-          fetch(`https://logeachi-com-server.vercel.app/product?category=$minprizce=${0}&maxprice=${10000}&name=`).then(res => res.json()).then(data => setProduct(data))
+          fetch(`https://logeachi-com-server.vercel.app/product?category=$minprizce=${0}&maxprice=${10000}&name=`).then(res => res.json()).then(data => 
+           {
+                const projectData = data.sort((a, b) => new Date(b.addTime) - new Date(a.addTime));
+               setProduct(projectData)
+           }
+          )
      }, []);
 
 
@@ -25,8 +30,8 @@ const FeaturedProduct = () => {
                     </div>
 
                     {
-                         product?.length <= limit ? "" :  <div className=" text-center">
-                              <div onClick={() => setSetLimit(limit + 6)} className="  bg-black  hover:bg-[#e600e6c0]  px-4 py-2 rounded text-base md:text-xl font-medium  text-white  my-5 inline-block mx-auto cursor-pointer text-center ">  <div className=" flex  items-center justify-center gap-2  ">
+                         product?.length <= limit ? "" :  <div className=" mt-4  text-center">
+                              <div onClick={() => setSetLimit(limit + 6)} className=" button1 ">  <div className=" flex  items-center justify-center gap-2  ">
                                    <span className=" text-base"> See More </span> <BiChevronDown size={18}></BiChevronDown></div>
                               </div>
                          </div> 

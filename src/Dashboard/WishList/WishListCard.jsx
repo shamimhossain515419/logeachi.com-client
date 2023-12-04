@@ -29,7 +29,7 @@ const WishListCard = ({ card }) => {
                          </div>
                     </div>
 
-                    <div onClick={() => handleDelete(_id)} className=" bg-[#ff26cc36] p-2 rounded-full cursor-pointer">
+                    <div onClick={() => handleDelete(_id)} className=" bg-[#5fa1035a] p-2 rounded-full cursor-pointer">
                          <BsTrash className=" text-red-500" size={24}></BsTrash>
                     </div>
 

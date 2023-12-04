@@ -50,8 +50,8 @@ const PaymentHistory = () => {
 
 
                                         <div className="projcard-tagbox  ">
-                                             <span className="projcard-tag cursor-pointer text-base md:text-xl py-1"> ৳ {item?.price} </span>
-                                             <span className="projcard-tag cursor-pointer text-base md:text-xl py-1"> Details </span>
+                                             <span className="projcard-tag cursor-pointer text-sm md:text-xl py-1  "> ৳ {item?.price} </span>
+                                             <span className="projcard-tag cursor-pointer text-sm md:text-xl py-1"> Details </span>
                                         </div>
                                    </div>
                               </div>

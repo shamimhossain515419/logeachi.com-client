@@ -27,7 +27,7 @@ const Message = () => {
                               <div>
                                    <div>
                                         <Question></Question>
-                                        <Link target="_blank" to={"https://www.facebook.com/Shamim515419"} className="   bg-[#e50ae9]   inline-block px-6 cursor-pointer  rounded-lg text-white py-3    ">
+                                        <Link target="_blank" to={"https://www.facebook.com/Shamim515419"} className="   primaryBg   inline-block px-6 cursor-pointer  rounded-lg text-white py-3    ">
                                              <div className=" flex items-center  gap-3">
                                              <FaRocketchat size={28} />
                                              <span className=" text-base md:text-xl font-medium"> Start Chart </span>

@@ -3,6 +3,7 @@ import { AiOutlineUserAdd } from 'react-icons/ai'
 import { FaBars } from 'react-icons/fa'
 import { useContext, useState } from "react";
 import NavbarModal from "./NavbarModal";
+import { HiSearch, } from "react-icons/hi";
 import { AuthContext } from "../../Rotues/Authprovider/Authprovider";
 import NavbarDown from "./NavbarDown";
 import AddCardNavbar from "../../Component/AddCardNavbar/AddcardNavbar";
@@ -15,12 +16,7 @@ const Navbar = () => {
      const { user, search, setSearch } = useContext(AuthContext);
      const navigete = useNavigate()
 
-     // const handleInputKeyPress = (event) => {
-     //      if (event.key === 'Enter') {
-     //        // Handle "Enter" key press for the input field
-     //        console.log('Enter key pressed for input field');
-     //      }
-     //    };
+
      console.log(search);
 
      return (
@@ -30,10 +26,10 @@ const Navbar = () => {
                          <div className="  flex justify-between  items-center gap-2 px-4 py-2 rounded-lg w-full">
                               <div className=" flex gap-2 md:gap-5  items-center">
                                    <div onClick={() => setIsOpen(true)} className="  block md:hidden"><FaBars></FaBars> </div>
-                                   <div className=" flex items-center">
+                                   <Link to={'/'} className=" flex items-center">
                                         <img className=" hidden md:block   md:bl h-[40px]" src={logo} alt="" />
-                                        <h1 className=" hidden md:block  text-2xl    text-white font-bold md:text-2xl  "> Logeachi.com</h1>
-                                   </div>
+                                        <h1 className=" hidden md:block  text-2xl    text-white font-bold md:text-3xl  "> Logeachi.com</h1>
+                                   </Link>
                                    <div className=" hidden md:flex gap-3 items-center text-white">
                                         <Link className=" text-base md:text-lg  font-medium">Home</Link>
                                         <Link to={'/product/category'} className=" text-base md:text-lg font-medium">Shop</Link>
@@ -44,9 +40,14 @@ const Navbar = () => {
 
                               <div>
                                    <div className=" relative  w-full   md:w-[350px]">
-                                        <input onKeyPress={(e) => e.key === "Enter" ? navigete(`/product/category?category=${search}&minprice=0&maxprice=1000&name=`) : "/"} onChange={(e) => { setSearch(e.target.value) }} className=" text-xl  rounded relative w-full outline-none border  border-[#e600e6c0]  placeholder:text-black md:py-2 px-2 bg-white " type="text" placeholder="Search  ..." />
-                                        <CiSearch className=" md:mt-1 cursor-pointer absolute top-1  right-1 " size={24} />
+                                        <form className="search_box">
+                                             <input onKeyPress={(e) => e.key === "Enter" ? navigete(`/product/category?category=${search}&minprice=0&maxprice=1000&name=`) : "/"} onChange={(e) => { setSearch(e.target.value) }} type="text" placeholder="Search for products" />
+                                             <button className=" mt-1" type="submit">
+                                                  <HiSearch size={24} />
+                                             </button>
+                                        </form>
                                    </div>
+                                   
                               </div>
                               <div>
                                    <div className=" flex items-center gap-3 md:gap-10 text-white">

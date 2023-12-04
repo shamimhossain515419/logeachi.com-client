@@ -36,7 +36,7 @@ const Product = () => {
      console.log(params);
 
      const { image1, name, description, color, price, image2, image3, reading,
-          Sleeve, Occasion, discount,_id, category, brand, size, runningCategory,
+          Sleeve, Occasion, discount, _id, category, brand, size, runningCategory,
           quality } = singleData;
 
      const [data,] = GetCategory(category);
@@ -50,7 +50,7 @@ const Product = () => {
           setQuantity(Quantity - 1)
      }
 
-     const addcard = { image1,productId:_id, description, color, email: user?.email, name, price, size: IsSize, Quantity, discount, brand, category }
+     const addcard = { image1, productId: _id, description, color, email: user?.email, name, price, size: IsSize, Quantity, discount, brand, category }
 
 
 
@@ -210,13 +210,15 @@ const Product = () => {
 
 
 
-                         {
-                              data?.data?.length <= limit ? "" : <div className=" text-center">
-                                   <div onClick={() => setSetLimit(limit + 10)} className="  bg-black  hover:bg-[#e600e6c0]  px-4 py-2 rounded text-base md:text-xl font-medium  text-white  my-5 inline-block mx-auto cursor-pointer text-center ">  <div className=" flex  items-center justify-center gap-2  ">
-                                        <span className=" text-base"> See More </span> <BiChevronDown size={18}></BiChevronDown></div>
+                         <div className=" pt-4">
+                              {
+                                   data?.data?.length <= limit ? "" : <div className="  text-center">
+                                        <div onClick={() => setSetLimit(limit + 10)} className=" button1">  <div className=" flex  items-center justify-center gap-2  ">
+                                             <span className=" text-base"> See More </span> <BiChevronDown size={18}></BiChevronDown></div>
+                                        </div>
                                    </div>
-                              </div>
-                         }
+                              }
+                         </div>
                     </div>
 
                </div>

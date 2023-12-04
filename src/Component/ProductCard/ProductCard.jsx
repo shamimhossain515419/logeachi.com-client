@@ -42,13 +42,13 @@ const ProductCard = ({ card }) => {
 
                     <div>
                          <h1 className=" text-base md:text-xl  font-semibold  uppercase  mt-5"> {name?.length > 12 ? `${name?.slice(0, 12)}..` : `${name}`}  </h1>
-                         <h2 className=" text-base md:text-lg  font-thin my-2"> {description?.slice(0, 27)}... </h2>
+                         <h2 className=" text-base md:text-lg  font-thin my-2"> {description?.slice(0, 22)}... </h2>
                          <h1 className=' text-lg md:text-2xl font-semibold'>  ৳ {price}</h1>
                          <div className='  flex gap-2 items-center justify-between my-2 '>
-                              <Link to={`/product/${_id}`} className=" bg-black text-white hover:bg-[#e600e6fa] px-8 py-2 cursor-pointer rounded-md ">
-                                   <h1 className="  uppercase text-base md:text-md font-semibold ">  Add Card</h1>
+                              <Link to={`/product/${_id}`} className=" bg-[#18604a] text-white hover:bg-[#518607] duration-300 px-8 py-2 cursor-pointer rounded-md ">
+                                   <h1 className=" text-white  uppercase text-base md:text-md font-semibold ">  Add Card</h1>
                               </Link>
-                              <div onClick={handlewishList} className=' hover:text-[#e600e6fa] bg-black text-white cursor-pointer  rounded-full p-2 '>
+                              <div onClick={handlewishList} className=' bg-[#18604a] text-white hover:bg-[#518607]  cursor-pointer  rounded-full p-2 '>
                                    <AiFillHeart size={24}></AiFillHeart>
                               </div>
                          </div>

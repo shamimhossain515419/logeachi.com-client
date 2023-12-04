@@ -1,18 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;900&family=Poppins:wght@300;400;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-   font-family: 'Roboto', sans-serif;
 
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+:root {
+   --font1: "Heebo", sans-serif;
+   --font2: "Poppins", sans-serif;
+
+   --color1: #18604a;
+   --color1hover: #23755c;
+
+   --color2: #60a103;
+   --color2hover: #528c01;
+
+   --color3: #171717;
+   --color4: #6c757d;
+}
+
+body {
+   font-family: var(--font2);
+   font-weight: 400;
+   color: var(--color4);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: var(--font1);
+   font-weight: 700;
+   color: #171717;
+   margin: 0;
+   padding: 0;
 }
 
 .primaryBg {
-   background-color: #e600e6c0;
+   background-color: #18604a;
 }
 
 .primaryColor {
-   color: #e50ae9;
+   color: #18604a;
 
 }
 
@@ -21,7 +55,7 @@ body {
 }
 
 .bottonBox {
-   background: black;
+   background: #60a103;
    color: white;
    padding: 7px 15px;
    border-radius: 8px;
@@ -29,7 +63,7 @@ body {
 }
 
 .bottonBox:hover {
-   background-color: #e50ae9;
+   background-color: #18604a;
    color: white;
 }
 
@@ -43,4 +77,211 @@ body {
 
 .modalShadow {
    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.button1 {
+   font-family: Heebo, sans-serif;
+   font-weight: 700;
+   font-size: 16px;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   border: none;
+   display: inline-block;
+   padding: 15px 30px;
+   border: 2px solid var(--color2);
+   border-radius: 30px;
+   transition: all linear 0.3s;
+   color: #fff;
+   background-color: var(--color2);
+   border-color: var(--color2);
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   cursor: pointer;
+}
+
+.button1:hover {
+   background-color: #518607;
+   border: 2px solid #518607;
+}
+
+/* banner css start */
+.banner {
+   padding-top: 250px;
+   padding-bottom: 250px;
+   background: url("../public/background-header.png") no-repeat center/cover;
+   position: relative;
+   object-position: 100%;
+   object-fit: contain;
+   overflow: hidden;
+}
+
+.banner .image1 {
+   position: absolute;
+   bottom: 20px;
+   left: 35%;
+   width: 250px;
+   animation: shake 4s ease infinite;
+}
+
+@keyframes shake {
+   0% {
+      bottom: 20px;
+   }
+
+   50% {
+      bottom: 30px;
+   }
+
+   100% {
+      bottom: 20px;
+   }
+}
+
+.banner .image2 {
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   width: 150px;
+   transform: rotate(240deg);
+   animation: shake2 4s ease infinite;
+}
+
+@keyframes shake2 {
+   0% {
+      right: 20px;
+   }
+
+   50% {
+      right: 30px;
+   }
+
+   100% {
+      right: 20px;
+   }
+}
+
+/* banner css end */
+
+
+
+/* category_item  */
+
+.categories {
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   border-radius: 10px;
+   margin-bottom: 30px;
+}
+
+.categories h3 {
+   background: var(--color1);
+   padding: 16px;
+   color: #fff;
+   text-transform: uppercase;
+   border-radius: 10px 10px 0 0;
+}
+
+.categories_items {
+   margin-bottom: 30px;
+}
+
+.categories_items .category_item:last-child {
+   border-radius: 0 0 10px 10px;
+}
+
+.categories_items {
+   margin-bottom: 30px;
+}
+
+.categories_items .category_item:last-child {
+   border-radius: 0 0 10px 10px;
+}
+
+.category_item {
+   padding: 10px 15px;
+   transition: all linear .2s;
+}
+
+.category_item:hover {
+   background: var(--color2);
+}
+
+.category_item a {
+   color: var(--color3hover);
+   transition: all linear .2s;
+}
+
+
+.category_item:hover a {
+   color: #fff;
+}
+
+
+.border {
+   border: 2px solid #60a103;
+}
+
+
+.services_item {
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   align-items: center;
+   justify-content: center;
+}
+
+
+
+.search_box {
+   display: flex;
+   position: relative;
+}
+
+.search_box input {
+   width: 100%;
+   height: 100%;
+   background: var(--color1hover);
+   border: none;
+   padding: 10px 20px 10px 20px;
+   border-radius: 30px;
+   outline: none;
+   color: #fff;
+}
+
+.search_box input::placeholder {
+   color: #ffffff7d;
+}
+
+.search_box button {
+   background: transparent;
+   border: none;
+   position: absolute;
+   top: 8px;
+   right: 10px;
+   color: #fff;
+}
+
+.category_image {
+   margin-bottom: 30px;
+   position: relative;
+   overflow: hidden;
+}
+
+.category_image a {
+   position: absolute;
+   bottom: -64px;
+   left: 50%;
+   width: 100%;
+   transform: translateX(-50%);
+   text-align: center;
+   background: rgba(0, 0, 0, 0.8);
+   padding: 20px 0;
+   color: #fff;
+   transition: all linear 0.3s;
+   --webkit--transition: all linear 0.3s;
+   --moz--transition: all linear 0.3s;
+   --ms--transition: all linear 0.3s;
+   --o--transition: all linear 0.3s;
+}
+
+.category_image:hover a {
+   bottom: 0;
 }

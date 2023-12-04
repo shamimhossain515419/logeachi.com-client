@@ -62,7 +62,7 @@ const Profile = () => {
 
 
                <div className=" my-4">
-                    <div onClick={handleSubmit} className=" cursor-pointer  bg-black uppercase  hover:bg-[#e50ae9] text-xl px-4  inline-block py-2   font-medium  text-white"> আপডেট</div>
+                    <div onClick={handleSubmit} className=" cursor-pointer   hover:bg-[#18604a] uppercase  bg-[#60a103] text-xl px-4  inline-block py-2   font-medium  text-white"> আপডেট</div>
                </div>
                <div>
                     {

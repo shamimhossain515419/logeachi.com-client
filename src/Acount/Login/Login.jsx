@@ -6,6 +6,7 @@ import Container from "../../Component/Container";
 import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const Login = () => {
      const [confrimPass, setConfrimPass] = useState(true)
@@ -33,11 +34,21 @@ const Login = () => {
      }
 
      const hendleGoogle = () => {
-          GoogleLogin().then(result => {
-               if (result) {
-                    navigate('/')
-                    toast.success('সফলভাবে নিবন্ধন হয়েছে!')
-               
+          GoogleLogin().then((result) => {
+               const userinfo = result?.user
+               if (userinfo) {
+
+                    const UserData = { name: userinfo?.displayName, email: userinfo?.email, status: "user" }
+                    axios.post('https://logeachi-com-server.vercel.app/users', UserData).then(result => {
+                         navigate('/')
+                         toast.success('সফলভাবে নিবন্ধন হয়েছে!')
+                         console.log(result?.data?.email);
+                    }).catch(e => {
+                         navigate('/')
+                         toast.error(e?.massage)
+                    })
+
+
                }
 
           }).then(error => {

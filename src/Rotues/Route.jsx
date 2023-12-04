@@ -23,6 +23,7 @@ import PaymentHistory from "../Component/PaymentHistory/PaymentHistory";
 import Subscript from "../Component/Subscript/Subscript";
 import Message from "../Component/message/Message";
 import Oderprosses from "../Component/OrderProsses/Oderprosses";
+import Add_product from "../Dashboard/Add-Prodcut/Add_product";
 
 
 const Route = createBrowserRouter([
@@ -113,8 +114,12 @@ const Route = createBrowserRouter([
                               element: <Subscript></Subscript>
                          },
                          {
+                              path: '/dashboard/add-product',
+                              element: <Add_product></Add_product>
+                         },
+                         {
                               path: '/dashboard/massage',
-                              element: <Message></Message>
+                              element:<PrivateRoute> <Message></Message></PrivateRoute>, 
                          },
 
                     ]

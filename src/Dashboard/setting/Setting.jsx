@@ -59,7 +59,7 @@ const Setting = () => {
                          </div>
                          <div className=" text-xl font-normal cursor-pointer " onClick={() => setOpen(!Open)} >  {Open ? "Hide password" : "Show password"}</div>
 
-                         <div className="  text-end text-white mx-auto inline-block bg-black px-4 py-2 my-2">
+                         <div className="  cursor-pointer   hover:bg-[#18604a] uppercase  bg-[#60a103] text-xl px-4  inline-block py-2   font-medium  text-white">
                               <button>আপডেট করুন </button>
                          </div>
 

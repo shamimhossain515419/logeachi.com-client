@@ -13,8 +13,8 @@ const WishList = () => {
                     <div className=" max-w-[600px] ">
                          <div className=" my-7   flex  justify-between gap-5 items-center">
                               <div className=" flex items-center gap-10">
-                                   <h1 className="  w-[80px] text-xl font-medium"> Item</h1>
-                                   <p className=" text-xl font-medium"> Details</p>
+                                   <h1 className=" textColor  w-[80px] text-xl font-medium"> Item</h1>
+                                   <h1 className=" text-xl font-medium"> Details</h1>
                               </div>
                               <div>
                                    <h2 className=" text-xl font-medium ">Action</h2>

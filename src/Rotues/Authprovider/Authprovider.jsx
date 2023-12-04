@@ -77,40 +77,37 @@ const AuthProvider = ({ children }) => {
 
 
      }, [user?.email])
+     const getUser = async (email) => {
+          const res = await fetch(`https://logeachi-com-server.vercel.app/users?email=${email}`);
+          const data = await res.json();
+          setUserinfo(data)
+     }
 
      useEffect(() => {
           const unsubcript = onAuthStateChanged(auth, currentUser => {
 
 
                if (currentUser?.email) {
-                    axios.post('https://logeachi-com-server.vercel.app/jwt')
-                         .then(data => {
-                              setUser(currentUser);
-                              setLoading(false);
-                              localStorage.setItem('access-token', data?.data?.token);
 
-                              axios.get(`https://logeachi-com-server.vercel.app/users?email=${currentUser?.email}`).then(result => {
-                                   setUserinfo(result?.data)
-                                   if (!result?.data) {
-                                        const UserData = { name: currentUser?.displayName, email: currentUser?.email, status: "user" }
-                                        axios.post('https://logeachi-com-server.vercel.app/users', UserData).then(result => {
-                                             console.log(result?.data?.email);
-                                        })
-                                   }
-
+                    if (currentUser?.email) {
+                         setUser(currentUser);
+                         setLoading(false);
+                         getUser(currentUser?.email)
+                         axios.post('https://logeachi-com-server.vercel.app/jwt')
+                              .then(data => {
+                                   localStorage.setItem('access-token', data?.data?.token)
+                              }).catch(error => {
+                                   localStorage.removeItem('access-token')
                               })
 
-                         }).catch(error => {
-                              localStorage.removeItem('access-token');
-                              setLoading(true);
-                         })
+                    } else {
+                         localStorage.removeItem('access-token')
+                         setUser(true)
+                    }
 
-               } else {
-                    localStorage.removeItem('access-token')
+
+
                }
-
-
-
 
           })
           return () => {

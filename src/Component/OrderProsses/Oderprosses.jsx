@@ -33,7 +33,7 @@ const Oderprosses = () => {
 
                                              <div>
                                                   {
-                                                       Open == item?._id ? <div className='p-2 bg-[#e50ae9] text-white rounded '>
+                                                       Open == item?._id ? <div className='p-2 bg-[#60a103] text-white rounded '>
                                                             <AiOutlineMinus size={24}></AiOutlineMinus>
                                                        </div> : <div className='p-2 bg-[#857c7c43] primary rounded '>
                                                             <AiOutlinePlus size={24}></AiOutlinePlus>

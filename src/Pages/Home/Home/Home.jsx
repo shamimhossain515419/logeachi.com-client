@@ -3,7 +3,6 @@ import Banner from "../Bannar/Banner";
 import FeaturedProduct from "../ProductHome/FeaturedProduct";
 import ProductHome from "../ProductHome/ProductHome";
 import TrendingProduct from "../ProductHome/TrendingProduct";
-
 import image1 from '../../../../public/Category/smiling-girl-is-holding-blouse-showing-perfect-gesture-clothes-background_176474-116739.avif'
 import image2 from '../../../../public/Category/Rang-bangladesh-local-8-baner-thumbnail-1118x400-70.jpg'
 import banner1 from '../../../../public/discount.png'
@@ -16,10 +15,6 @@ import NewProduct from "../ProductHome/NewProduct";
 import TeandingModal from "../../../Component/TreandingModal/TeandingModal";
 import { useState } from "react";
 const Home = () => {
-
-
-
-    
 
      const [Open, setOpen] = useState(true)
 

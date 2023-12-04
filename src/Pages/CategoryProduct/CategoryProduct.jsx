@@ -23,11 +23,17 @@ const CategoryProduct = () => {
      console.log(doemon);
 
      useEffect(() => {
-          fetch(`https://logeachi-com-server.vercel.app/product?category=${search}$minprizce=${minPrice}&maxprice=${maxPrice}&name=${search}`).then(res => res.json()).then(data => setProduct(data));
+          fetch(`https://logeachi-com-server.vercel.app/product?category=${search}$minprizce=${minPrice}&maxprice=${maxPrice}&name=${search}`).then(res => res.json()).then(data => {
+
+               const projectData = data.sort((a, b) => new Date(b.addTime) - new Date(a.addTime));
+               setProduct(projectData)
+          });
      }, [category, maxPrice, minPrice, search]);
+     console.log(product);
 
      const handleSelectCatagory = (e) => {
           const data = e?.target?.value;
+          setSearch(data)
           if (data !== "Default") {
                setCategory([data, true])
           } else {
@@ -213,7 +219,7 @@ const CategoryProduct = () => {
                                    <SectionTitle title={"Select your preferred product"}></SectionTitle>
                                    <div className=" flex items-center gap-2">
                                         <h1 className=" text-base   font-normal"> Sort by: </h1>
-                                        <select value={category?.[0]} onChange={handleSelectCatagory} className="  border-2 px-4 py-1 rounded border-[#e943d3] text-black" label="Sort by">
+                                        <select defaultValue={category?.[0]} onChange={handleSelectCatagory} className="  border-2 px-4 py-1 rounded border-[#60a103] text-black" label="Sort by">
                                              <option className=" text-black">Default </option>
                                              <option className=" text-black">t-shirt</option>
                                              <option className=" text-black"> sports</option>
@@ -226,13 +232,13 @@ const CategoryProduct = () => {
 
                               <div>
                                    {
-                                        product?.length  >0 ? <div  className=" grid md:grid-cols-3 gap-5 xl:grid-cols-4 ">{
+                                        product?.length > 0 ? <div className=" grid md:grid-cols-3 gap-5 xl:grid-cols-4 ">{
                                              product?.map(item => <ProductCard card={item} key={item?._id}></ProductCard>)
-                                        }</div> : 
-                                        <div>
-                                          <ProductNotFound  setSearch={setSearch} title={"Product Not Found"}></ProductNotFound>
+                                        }</div> :
+                                             <div>
+                                                  <ProductNotFound setSearch={setSearch} title={"Product Not Found"}></ProductNotFound>
 
-                                        </div>
+                                             </div>
                                    }
 
 
@@ -240,8 +246,8 @@ const CategoryProduct = () => {
 
 
                               {
-                                   product?.length <= limit ? "" : <div className=" text-center">
-                                        <div onClick={() => setSetLimit(limit + 10)} className="  bg-black  hover:bg-[#e600e6c0]  px-4 py-2 rounded text-base md:text-xl font-medium  text-white  my-5 inline-block mx-auto cursor-pointer text-center ">  <div className=" flex  items-center justify-center gap-2  ">
+                                   product?.length <= limit ? "" : <div className=" mt-4 text-center">
+                                        <div onClick={() => setSetLimit(limit + 10)} className="button1">  <div className=" flex  items-center justify-center gap-2  ">
                                              <span className=" text-base"> See More </span> <BiChevronDown size={18}></BiChevronDown></div>
                                         </div>
                                    </div>
