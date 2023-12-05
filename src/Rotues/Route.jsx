@@ -49,10 +49,6 @@ const Route = createBrowserRouter([
                     element: <Login></Login>
                },
                {
-                    path: '/loading',
-                    element: <Loading></Loading>
-               },
-               {
                     path: "/payment/success/:id",
                     element: <PaymentState></PaymentState>
                },

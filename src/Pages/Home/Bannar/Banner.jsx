@@ -5,7 +5,7 @@ import banner4 from '../../../../public/kay-kraft_01.jpg'
 import Container from '../../../Component/Container';
 import { BsFillPatchCheckFill } from 'react-icons/bs';
 import { GrDeliver } from 'react-icons/gr';
-import object1 from '../../../../public/object.png'
+// import object1 from '../../../../public/object.png'
 
 const Banner = () => {
      return (
