@@ -1,11 +1,12 @@
 {
      "routes": [
           {
-               "res": "/",
+               "src": "/",
                "dest": "/"
           },
           {
-               
+               "src": "/account/register",
+               "dest": "/"
           }
      ]
 }
