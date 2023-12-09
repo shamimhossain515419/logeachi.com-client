@@ -13,18 +13,29 @@ import banner5 from '../../../../public/woman.jpg'
 
 import NewProduct from "../ProductHome/NewProduct";
 import TeandingModal from "../../../Component/TreandingModal/TeandingModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import DesignServices from "../../../Component/DesignServices/DesignServices";
+import Blog from "../../../Component/Blog/Blog";
 const Home = () => {
 
-     const [Open, setOpen] = useState(true)
+
+
+     const [Open, setOpen] = useState(true);
+
+
+
+
+
 
      return (
           <div>
                <Banner></Banner>
                <ProductHome></ProductHome>
+
+               <DesignServices></DesignServices>
                <FeaturedProduct></FeaturedProduct>
 
-               <div>
+               <div className=" hidden xl:block">
                     {Open ? <div className=" w-full flex justify-center items-center gap-2 min-h-screen fixed top-2 left-- right-0 bottom-0 bg-[#000000ab]">
                          <TeandingModal setOpen={setOpen}></TeandingModal>
                     </div> : null
@@ -74,6 +85,13 @@ const Home = () => {
                          </div>
                     </div>
                </Container>
+
+               <Container>
+                    <Blog></Blog>
+               </Container>
+
+
+
           </div>
      );
 };

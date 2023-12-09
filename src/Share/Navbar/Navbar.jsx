@@ -8,8 +8,6 @@ import { AuthContext } from "../../Rotues/Authprovider/Authprovider";
 import NavbarDown from "./NavbarDown";
 import AddCardNavbar from "../../Component/AddCardNavbar/AddcardNavbar";
 import WishListCardNavbar from "../../Component/WishCardNavbar/WishListCardNavbar";
-import logo from '../../../public/Ions/Logo.png'
-import { CiSearch } from "react-icons/ci";
 const Navbar = () => {
      const [isOpen, setIsOpen] = useState(false);
      const [toggle, setToggle] = useState(false)
@@ -25,16 +23,16 @@ const Navbar = () => {
                     <div>
                          <div className="  flex justify-between  items-center gap-2 px-4 py-2 rounded-lg w-full">
                               <div className=" flex gap-2 md:gap-5  items-center">
-                                   <div onClick={() => setIsOpen(true)} className="  block md:hidden"><FaBars></FaBars> </div>
+                                   <div onClick={() => setIsOpen(true)} className=" text-white  block md:hidden"><FaBars></FaBars> </div>
                                    <Link to={'/'} className=" flex items-center">
-                                        <img className=" hidden md:block   md:bl h-[40px]" src={logo} alt="" />
+                                        {/* <img className=" hidden md:block   md:bl h-[40px]" src={logo} alt="" /> */}
                                         <h1 className=" hidden md:block  text-2xl    text-white font-bold md:text-3xl  "> Logeachi.com</h1>
                                    </Link>
                                    <div className=" hidden md:flex gap-3 items-center text-white">
-                                        <Link className=" text-base md:text-lg  font-medium">Home</Link>
-                                        <Link to={'/product/category'} className=" text-base md:text-lg font-medium">Shop</Link>
-                                        <Link className=" hidden xl:block text-base md:text-lg font-medium">Discount center</Link>
-                                        <Link to={'/order-process'} className=" text-base md:text-lg font-medium">How to Order</Link>
+                                        <Link className=" text-base   font-medium">Home</Link>
+                                        <Link to={'/product/category'} className=" text-base  font-medium">Shop</Link>
+                                        <Link className=" hidden xl:block text-base  font-medium">Discount center</Link>
+                                        <Link to={'/order-process'} className=" text-base  font-medium">How to Order</Link>
                                    </div>
                               </div>
 
@@ -47,7 +45,7 @@ const Navbar = () => {
                                              </button>
                                         </form>
                                    </div>
-                                   
+
                               </div>
                               <div>
                                    <div className=" flex items-center gap-3 md:gap-10 text-white">
@@ -56,10 +54,10 @@ const Navbar = () => {
 
 
                                         </div>
-                                        {user ? <> <div className=" hover:bg-[#784578c0] p-2 rounded-md cursor-pointer" onMouseEnter={() => setToggle(true)} onMouseLeave={() => setToggle(false)}>
+                                        {user ? <> <div className=" hover:bg-[#60a103] p-2 rounded-md cursor-pointer" onMouseEnter={() => setToggle(true)} onMouseLeave={() => setToggle(false)}>
                                              <AiOutlineUserAdd className=" text-[18px] md:text-[24px]" ></AiOutlineUserAdd>
                                         </div></> : <>  <Link to={'/account/login'}>
-                                             <h1 className="  font-bold"> Login</h1>
+                                             <h1 className="  secondColor font-bold"> Login</h1>
                                         </Link></>
                                         }
 

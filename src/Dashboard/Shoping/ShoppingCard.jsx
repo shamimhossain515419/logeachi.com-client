@@ -24,7 +24,7 @@ const ShoppingCard = ({ card }) => {
 
      return (
           <div>
-               <div className=" my-2 shadowbox p-2  rounded-md " >
+               <div className=" my-2 shadowbox p-2  h-full rounded-md " >
 
                     <div className=" flex gap-8   ">
                          <img className=" w-[150px] rounded" src={image1} alt="" />

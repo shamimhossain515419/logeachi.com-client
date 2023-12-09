@@ -1,12 +1,8 @@
+
+
 {
-     "routes": [
-          {
-               "src": "/",
-               "dest": "/"
-          },
-          {
-               "src": "/account/register",
-               "dest": "/"
-          }
-     ]
-}
+     "rewrites":  [
+         {"source": "/(.*)", "destination": "/"}
+      ]
+  }
+

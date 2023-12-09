@@ -64,29 +64,29 @@ const Login = () => {
                     <Container>
                          <div className=" grid md:grid-cols-2 gap-4 min-h-[80vh] ">
                               <div className=" w-full flex justify-center items-center gap-2 flex-col">
-                                   <h1 className=" text-lg md:text-2xl font-bold my-2">
+                                   <h1 className=" text-lg md:text-2xl  primaryColor font-bold my-2">
                                         কোনো একাউন্ট না থাকলে  নিবন্ধন  করুন
                                    </h1>
-                                   <Link to={'/account/register'} className="  text-white px-4 py-2 rounded-lg inline-block bg-[#2756ff]"> নিবন্ধন
+                                   <Link to={'/account/register'} className="  text-white px-4 py-2 rounded-lg inline-block bg-[#60a103]"> নিবন্ধন
                                    </Link>
                               </div>
                               <div className=" my-5">
 
 
                                    <div>
-                                        <h1 className=" text-base md:text-xl 2xl:text-3xl my-4 "> নিবন্ধন করুন !</h1>
+                                        <h1 className=" text-base primaryColor  md:text-xl 2xl:text-3xl my-4 "> নিবন্ধন করুন !</h1>
 
                                         <form onSubmit={handleSubmit}>
 
 
                                              <div className=" w-full  py-2">
                                                   <label className=" block text-base md:text-xl  font-light py" htmlFor="name">ইমেইল</label>
-                                                  <input required className="  py-2 px-3  w-full   outline-none   my-2 border  focus:border-[#e50ae9] focus:bg-[#cf43ae5a]" type="email" name="email" placeholder="ইমেইল" id="" />
+                                                  <input required className="  py-2 px-3  w-full   outline-none   my-2 border  focus:border-[#18604a] " type="email" name="email" placeholder="ইমেইল" id="" />
 
                                              </div>
                                              <div className=" w-full  py-2 relative">
                                                   <label className=" block text-base md:text-xl  font-light py" htmlFor="name">  পাসওয়ার্ড</label>
-                                                  <input required className=" relative   py-2 px-3  w-full   outline-none   my-2 border  focus:border-[#e50ae9] focus:bg-[#cf43ae5a]" type={`${Open == true ? "text" : "password"}`} name="password" placeholder="পাসওয়ার্ড" id="" />
+                                                  <input required className=" relative   py-2 px-3  w-full   outline-none   my-2 border  focus:border-[#18604a] " type={`${Open == true ? "text" : "password"}`} name="password" placeholder="পাসওয়ার্ড" id="" />
                                                   {
                                                        confrimPass == false ? <p className="text-red-400 text-sm md:text-base "> Password not match </p> : <></>
 
@@ -98,7 +98,7 @@ const Login = () => {
                                              <div className=" my-4 text-xl font-normal cursor-pointer " onClick={() => setOpen(!Open)} >  {Open ? "Hide password" : "Show password"}</div>
                                              <div className=" flex items-center flex-col  gap-2 justify-center ">
                                                   <div>
-                                                       <button type="submit" className="  text-white px-4 py-2 rounded-lg inline-block bg-[#2756ff]"> সাবমিট করুন</button>
+                                                       <button type="submit" className="  text-white px-4 py-2 rounded-lg inline-block bg-[#60a103]"> সাবমিট করুন</button>
                                                   </div>
                                                   <button className=" underline">Forget password</button>
                                              </div>
@@ -106,10 +106,10 @@ const Login = () => {
 
 
                                         <div className=" flex gap-2 items-center w-full  py-8">
-                                             <div onClick={hendleGoogle} className="w-full bg-black py-[5px] cursor-pointer  rounded-md  flex justify-center items-center gap-2">
+                                             <div onClick={hendleGoogle} className="w-full bg-[#18604a] py-[5px] cursor-pointer  rounded-md  flex justify-center items-center gap-2">
                                                   <FcGoogle size={40}></FcGoogle>
                                              </div>
-                                             <div className=" w-full bg-[#365bef] text-white py-[5px]   cursor-pointer rounded-md flex justify-center items-center gap-2">
+                                             <div className=" w-full bg-[#60a103] text-white py-[5px]   cursor-pointer rounded-md flex justify-center items-center gap-2">
                                                   <BsFacebook size={40}></BsFacebook>
                                              </div>
 

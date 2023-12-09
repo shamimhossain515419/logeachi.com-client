@@ -77,9 +77,9 @@ const Product = () => {
                     <div className="grid md:grid-cols-2 gap-10">
                          <div>
                               <div className=" py-3 flex items-center flex-wrap gap-[2px] ">
-                                   <Link className="text-base md:text-lg hover:text-[#e93ccd] font-normal uppercase" to={'/'}>{"Home"}  </Link>
+                                   <Link className="text-base md:text-lg hover:text-[#518607] font-normal uppercase" to={'/'}>{"Home"}  </Link>
                                    <MdOutlineKeyboardArrowRight size={24}></MdOutlineKeyboardArrowRight>
-                                   <Link className=" text-base md:text-lg hover:text-[#e93ccd] font-normal uppercase" to={`/${category}`}>{category}</Link>
+                                   <Link className=" text-base md:text-lg hover:text-[#518607] font-normal uppercase" to={`/${category}`}>{category}</Link>
                                    <MdOutlineKeyboardArrowRight size={24}></MdOutlineKeyboardArrowRight>
 
                                    <p >{description?.slice(0, 28)}.. </p>
@@ -128,10 +128,10 @@ const Product = () => {
                                         <h1 className=" text-xl font-medium">Size:  <small> {IsSize}</small></h1>
                                    </div>
                                    <div className=" py-2 flex gap-2 items-center flex-wrap ">
-                                        <div onClick={(e) => setIsSize(e.target.innerText)} className=" border capitalize border-black hover:bg-black cursor-pointer  hover:text-white px-3 py-1 rounded-md">extra large</div>
-                                        <div onClick={(e) => setIsSize(e.target.innerText)} className=" border capitalize border-black hover:bg-black cursor-pointer  hover:text-white px-3 py-1 rounded-md">Large</div>
-                                        <div onClick={(e) => setIsSize(e.target.innerText)} className=" border capitalize border-black hover:bg-black cursor-pointer  hover:text-white px-3 py-1 rounded-md">medium</div>
-                                        <div onClick={(e) => setIsSize(e.target.innerText)} className=" border capitalize border-black hover:bg-black cursor-pointer  hover:text-white px-3 py-1 rounded-md">small</div>
+                                        <div onClick={(e) => setIsSize(e.target.innerText)} className=" border capitalize border-black hover:bg-[#518607] cursor-pointer  hover:text-white px-3 py-1 rounded-md">extra large</div>
+                                        <div onClick={(e) => setIsSize(e.target.innerText)} className=" border capitalize border-black hover:bg-[#518607]  cursor-pointer  hover:text-white px-3 py-1 rounded-md">Large</div>
+                                        <div onClick={(e) => setIsSize(e.target.innerText)} className=" border capitalize border-black hover:bg-[#518607]  cursor-pointer  hover:text-white px-3 py-1 rounded-md">medium</div>
+                                        <div onClick={(e) => setIsSize(e.target.innerText)} className=" border capitalize border-black hover:bg-[#518607]  cursor-pointer  hover:text-white px-3 py-1 rounded-md">small</div>
                                    </div>
                               </div>
 
@@ -140,26 +140,26 @@ const Product = () => {
 
                                    <div>
                                         <div className=' my-3 flex   items-center  gap-5'>
-                                             <button disabled={Quantity <= 1 ? true : false} onClick={handleIncriment} className=' p-2 px-5 cursor-pointer  rounded  bg-[#000] text-white'>
+                                             <button disabled={Quantity <= 1 ? true : false} onClick={handleIncriment} className=' p-2 px-5 cursor-pointer  rounded  bg-[#18604a] text-white'>
                                                   <CgMathMinus></CgMathMinus>
                                              </button>
                                              <div>
                                                   <input className=' outline-none  h-full  w-[20px]' type="text" step={"1"} min="1" max="15" onChange={() => setQuantity(Quantity)} value={Quantity} />
 
                                              </div>
-                                             <button disabled={Quantity >= 5 ? true : false} onClick={handleDecriment} className=' p-2 rounded  px-5  bg-[#000] text-white'>
+                                             <button disabled={Quantity >= 5 ? true : false} onClick={handleDecriment} className=' p-2 rounded  px-5  bg-[#18604a] text-white'>
                                                   <CgMathPlus></CgMathPlus>
                                              </button>
                                         </div>
                                    </div>
                                    <div className=" flex gap-10 items-center ">
-                                        <div onClick={handleAddCard} className=" text-lg md:text-xl rounded cursor-pointer uppercase text-center bg-black text-white hover:bg-[#e600e6c0] px-4 py-[4px]">add to card</div>
+                                        <div onClick={handleAddCard} className=" text-lg md:text-xl rounded cursor-pointer uppercase text-center bg-[#18604a] text-white hover:bg-[#518607] px-4 py-[4px]">add to card</div>
 
                                         <div className=" flex gap-2 items-center">
                                              <div className=" ">
-                                                  <AiFillHeart className=" px-[5px] rounded-full bg-[#e600e639] text-[#e600e6c0]" size={24}></AiFillHeart>
+                                                  <AiFillHeart className=" px-[5px] rounded-full bg-[#e600e639] text-[#e600e6c0]" size={28}></AiFillHeart>
                                              </div>
-                                             <p className=" underline "> ADD TO WISHLIST </p>
+                                             <p className=" underline secondColor "> ADD TO WISHLIST </p>
                                         </div>
                                    </div>
 

@@ -17,6 +17,7 @@ const CategoryProduct = () => {
      const [maxPrice, setMaxPrice] = useState(1000)
      const [minPrice, setMinPrice] = useState(0)
      const [doemon, setnodeMone] = useState("")
+     const [open, setOpen] = useState(false)
      const [category, setCategory] = useState(["Default", false]);
      const { user, search, setSearch } = useContext(AuthContext)
      const navigate = useNavigate();
@@ -78,136 +79,285 @@ const CategoryProduct = () => {
                                         <div>
                                              <SectionTitle title={"discount"}></SectionTitle>
                                         </div>
-                                        <div className="  flex  items-center gap-3 my-1 ">
-                                             <input className=" " type="checkbox" name="" id="" />
-                                             <p className=" tex-md   font-medium"> On Shipping</p>
-                                        </div>
-                                        <div className="  flex  items-center gap-3 my-1 ">
-                                             <input type="checkbox" name="" id="" />
-                                             <p className=" tex-md   font-medium">On Product</p>
+
+                                        <div>
+                                             {
+                                                  open ? <h1 className="  text-[#18604a] cursor-default capitalize" onClick={()=>setOpen(false)}>  Off Product </h1   > : <h1  className="  text-[#18604a] cursor-default capitalize" onClick={()=>setOpen(true)}> Sort Product</h1>
+                                             }
                                         </div>
 
-                                        <div className=" mt-4">
-                                             <SectionTitle title={"Category"}></SectionTitle>
-                                             <div className="  flex  items-center gap-3 mb-1 ">
+                                        {
+                                             open ? <div className=" md:hidden">
+
+
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input className=" " type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium"> On Shipping</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">On Product</p>
+                                                  </div>
+
+                                                  <div className=" mt-4">
+                                                       <SectionTitle title={"Category"}></SectionTitle>
+                                                       <div className="  flex  items-center gap-3 mb-1 ">
+                                                            <input className=" " type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium"> Man</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 my-1 ">
+                                                            <input type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">Woman</p>
+                                                       </div>
+                                                  </div>
+                                                  <div className=" mt-4">
+
+                                                       <SectionTitle title={"Brands"}></SectionTitle>
+                                                       <div className="  flex  items-center gap-3 mb-1 ">
+                                                            <input onChange={(e) => setnodeMone(e.checked)} className=" " type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">     Anomos Apparel</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 mb-1 ">
+                                                            <input className=" " type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">      Jothashilpa</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 mb-1 ">
+                                                            <input className=" " type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">     Shiboni</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 my-1 ">
+                                                            <input type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium"> AR Tarzi</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 my-1 ">
+                                                            <input type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium"> Artemis</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 my-1 ">
+                                                            <input type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">  Bangaliana Fashion Housei</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 my-1 ">
+                                                            <input type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">  Black House</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 my-1 ">
+                                                            <input type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">     Cloudrobe</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 my-1 ">
+                                                            <input type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">     Colourful Canvas</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 my-1 ">
+                                                            <input type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">          Deemas Life Style</p>
+                                                       </div>
+                                                  </div>
+
+                                                  <div className=" mt-4">
+
+                                                       <SectionTitle title={"Color"}></SectionTitle>
+                                                       <div className="  flex  items-center gap-3 mb-1 ">
+                                                            <input className=" " type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">     Anomos Apparel</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 mb-1 ">
+                                                            <input className=" " type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">        Ash</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 mb-1 ">
+                                                            <input className=" " type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">       Biscuit</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 my-1 ">
+                                                            <input type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium"> black</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 my-1 ">
+                                                            <input type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium"> Black & White</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 my-1 ">
+                                                            <input type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">   Blue & Cream</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 my-1 ">
+                                                            <input type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium"> Bright Yellow</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 my-1 ">
+                                                            <input type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">  Chilli green</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 my-1 ">
+                                                            <input type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">Chocolate</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 my-1 ">
+                                                            <input type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">   Brown & Red</p>
+                                                       </div>
+                                                  </div>
+                                                  <div className=" mt-4">
+
+                                                       <SectionTitle title={"Sleeves type"}></SectionTitle>
+                                                       <div className="  flex  items-center gap-3 mb-1 ">
+                                                            <input className=" " type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">        Adjustable with Button</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 mb-1 ">
+                                                            <input className=" " type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">        Cape Sleeve</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 mb-1 ">
+                                                            <input className=" " type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">        Full Sleeve</p>
+                                                       </div>
+                                                       <div className="  flex  items-center gap-3 my-1 ">
+                                                            <input type="checkbox" name="" id="" />
+                                                            <p className=" tex-md   font-medium">   Sleeve Less</p>
+                                                       </div>
+
+                                                  </div>
+                                             </div> : null
+                                        }
+
+                                        <div className=" hidden md:block">
+
+
+                                             <div className="  flex  items-center gap-3 my-1 ">
                                                   <input className=" " type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium"> Man</p>
+                                                  <p className=" tex-md   font-medium"> On Shipping</p>
                                              </div>
                                              <div className="  flex  items-center gap-3 my-1 ">
                                                   <input type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">Woman</p>
+                                                  <p className=" tex-md   font-medium">On Product</p>
+                                             </div>
+
+                                             <div className=" mt-4">
+                                                  <SectionTitle title={"Category"}></SectionTitle>
+                                                  <div className="  flex  items-center gap-3 mb-1 ">
+                                                       <input className=" " type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium"> Man</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">Woman</p>
+                                                  </div>
+                                             </div>
+                                             <div className=" mt-4">
+
+                                                  <SectionTitle title={"Brands"}></SectionTitle>
+                                                  <div className="  flex  items-center gap-3 mb-1 ">
+                                                       <input onChange={(e) => setnodeMone(e.checked)} className=" " type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">     Anomos Apparel</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 mb-1 ">
+                                                       <input className=" " type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">      Jothashilpa</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 mb-1 ">
+                                                       <input className=" " type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">     Shiboni</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium"> AR Tarzi</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium"> Artemis</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">  Bangaliana Fashion Housei</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">  Black House</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">     Cloudrobe</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">     Colourful Canvas</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">          Deemas Life Style</p>
+                                                  </div>
+                                             </div>
+
+                                             <div className=" mt-4">
+
+                                                  <SectionTitle title={"Color"}></SectionTitle>
+                                                  <div className="  flex  items-center gap-3 mb-1 ">
+                                                       <input className=" " type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">     Anomos Apparel</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 mb-1 ">
+                                                       <input className=" " type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">        Ash</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 mb-1 ">
+                                                       <input className=" " type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">       Biscuit</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium"> black</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium"> Black & White</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">   Blue & Cream</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium"> Bright Yellow</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">  Chilli green</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">Chocolate</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">   Brown & Red</p>
+                                                  </div>
+                                             </div>
+                                             <div className=" mt-4">
+
+                                                  <SectionTitle title={"Sleeves type"}></SectionTitle>
+                                                  <div className="  flex  items-center gap-3 mb-1 ">
+                                                       <input className=" " type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">        Adjustable with Button</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 mb-1 ">
+                                                       <input className=" " type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">        Cape Sleeve</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 mb-1 ">
+                                                       <input className=" " type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">        Full Sleeve</p>
+                                                  </div>
+                                                  <div className="  flex  items-center gap-3 my-1 ">
+                                                       <input type="checkbox" name="" id="" />
+                                                       <p className=" tex-md   font-medium">   Sleeve Less</p>
+                                                  </div>
+
                                              </div>
                                         </div>
-                                        <div className=" mt-4">
 
-                                             <SectionTitle title={"Brands"}></SectionTitle>
-                                             <div className="  flex  items-center gap-3 mb-1 ">
-                                                  <input onChange={(e) => setnodeMone(e.checked)} className=" " type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">     Anomos Apparel</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 mb-1 ">
-                                                  <input className=" " type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">      Jothashilpa</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 mb-1 ">
-                                                  <input className=" " type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">     Shiboni</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 my-1 ">
-                                                  <input type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium"> AR Tarzi</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 my-1 ">
-                                                  <input type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium"> Artemis</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 my-1 ">
-                                                  <input type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">  Bangaliana Fashion Housei</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 my-1 ">
-                                                  <input type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">  Black House</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 my-1 ">
-                                                  <input type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">     Cloudrobe</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 my-1 ">
-                                                  <input type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">     Colourful Canvas</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 my-1 ">
-                                                  <input type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">          Deemas Life Style</p>
-                                             </div>
-                                        </div>
-
-                                        <div className=" mt-4">
-
-                                             <SectionTitle title={"Color"}></SectionTitle>
-                                             <div className="  flex  items-center gap-3 mb-1 ">
-                                                  <input className=" " type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">     Anomos Apparel</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 mb-1 ">
-                                                  <input className=" " type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">        Ash</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 mb-1 ">
-                                                  <input className=" " type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">       Biscuit</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 my-1 ">
-                                                  <input type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium"> black</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 my-1 ">
-                                                  <input type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium"> Black & White</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 my-1 ">
-                                                  <input type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">   Blue & Cream</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 my-1 ">
-                                                  <input type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium"> Bright Yellow</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 my-1 ">
-                                                  <input type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">  Chilli green</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 my-1 ">
-                                                  <input type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">Chocolate</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 my-1 ">
-                                                  <input type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">   Brown & Red</p>
-                                             </div>
-                                        </div>
-                                        <div className=" mt-4">
-
-                                             <SectionTitle title={"Sleeves type"}></SectionTitle>
-                                             <div className="  flex  items-center gap-3 mb-1 ">
-                                                  <input className=" " type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">        Adjustable with Button</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 mb-1 ">
-                                                  <input className=" " type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">        Cape Sleeve</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 mb-1 ">
-                                                  <input className=" " type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">        Full Sleeve</p>
-                                             </div>
-                                             <div className="  flex  items-center gap-3 my-1 ">
-                                                  <input type="checkbox" name="" id="" />
-                                                  <p className=" tex-md   font-medium">   Sleeve Less</p>
-                                             </div>
-
-                                        </div>
                                    </div>
                               </div>
                          </div>

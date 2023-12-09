@@ -54,6 +54,10 @@ h6 {
    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
+.secondColor{
+   color: #60a103; 
+}
+
 .bottonBox {
    background: #60a103;
    color: white;

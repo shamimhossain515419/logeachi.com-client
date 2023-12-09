@@ -18,14 +18,14 @@ const ProductHome = () => {
      return (
           <div>
                <Container>
-                    <div className=" grid  md:grid-cols-6 gap-2">
+                    <div className=" md:grid  md:grid-cols-6 gap-2">
 
 
 
 
-                         <div className=" col-span-2 categories">
+                         <div className=" mt-2 md:col-span-2 categories">
                               <h3>Categories</h3>
-                              <ul className="categories_items">
+                              <ul className="categories_items w-full">
                                    {Categoris.map((category) => (
                                         <Category key={category.id} category={category}></Category>
                                    ))}
@@ -33,7 +33,7 @@ const ProductHome = () => {
                          </div>
 
                          <div className=" col-span-4">
-                              <div className=" p-3 md:ml-2 flex  items-center gap-5">
+                              <div className=" p-3 md:ml-2 flex  flex-wrap  items-center gap-5">
                                    <div className=" services_item flex   items-center gap-2">
                                         <div className=" text-center mx-auto  w-[70px]  h-[70px]  flex justify-center items-center border-[2px] border-[#60a103] p-2 rounded-full">
                                              <HiOutlineCreditCard size={24}></HiOutlineCreditCard>

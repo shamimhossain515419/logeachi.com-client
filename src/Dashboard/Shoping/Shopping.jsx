@@ -15,7 +15,7 @@ const Shopping = () => {
                     {
                          addcard?.length > 0 ? <>
 
-                              <div className=" grid md:grid-cols-2 gap-9 ">
+                              <div className=" grid md:grid-cols-2 gap-9  ">
                                    {
                                         addcard?.map(item => <ShoppingCard card={item} key={item?._id}></ShoppingCard> )
                                    }
